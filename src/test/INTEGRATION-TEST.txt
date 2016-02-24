@@ -15,8 +15,8 @@ Tested Platform:
 
 Note:
 	This test suite can be executed based on two scenarios.
-		1. Use the given test account and parameters at the end of the file.
-		2. Set up a new PeopleHR account and follow all the instruction given below in step 5.
+	    1. Use the given test account and parameters at the end of the file.
+	    2. Set up a new PeopleHR account and follow all the instruction given below in step 5.
 
 Steps to follow in setting integration test.
 
@@ -26,7 +26,7 @@ Steps to follow in setting integration test.
 
  4. Follow the below mentioned steps for adding valid certificate to access peopleHr API over https.
 
-   	i) 	 Extract the certificate from browser(Mozilla Firefox) by navigating to https://{instance_name}.peoplehr.net
+   	i)   Extract the certificate from browser(Mozilla Firefox) by navigating to https://{instance_name}.peoplehr.net
    	ii)  Go to new ESB 4.8.1 folder and place the downloaded certificate in both "<ESB_HOME>/repository/resources/security/" and "{peoplehr_CONNECTOR_HOME}/peoplehr-connector/peoplehr-connector-1.0.0/org.wso2.carbon.connector/src/test/resources/keystores/products/" folders.
    	iii) Navigate to "<ESB_HOME>/repository/resources/security/" using command prompt and execute keytool -importcert -file CERT_FILE_NAME -keystore client-truststore.jks -alias "CERT_NAME" in command line to import peoplehr certificate in to keystore.
    		 Give "wso2carbon" as password. Press "Y" to complete certificate import process.
@@ -34,50 +34,50 @@ Steps to follow in setting integration test.
    		 NOTE : CERT_FILE_NAME is the file name which was extracted from peoplehr. (e.g. *.peoplehr.com)
    			    CERT_NAME is an arbitrary name for the certificate. (e.g. peoplehr)
 
-   	iv) Navigate to "{PEOPLEHR_CONNECTOR_HOME}/src/test/resources/keystores/products/" using command prompt and execute keytool -importcert -file CERT_FILE_NAME -keystore wso2carbon.jks -alias "CERT_NAME" in command line to import Shopify certificate in to keystore.
+   	iv)  Navigate to "{PEOPLEHR_CONNECTOR_HOME}/src/test/resources/keystores/products/" using command prompt and execute keytool -importcert -file CERT_FILE_NAME -keystore wso2carbon.jks -alias "CERT_NAME" in command line to import Shopify certificate in to keystore.
    		Give "wso2carbon" as password.
 
    		NOTE : CERT_FILE_NAME is the file name which was extracted from peoplehr, change it accordingly. (e.g. *.peoplehr.com)
    			   CERT_NAME is an arbitrary name for the certificate. (e.g. peoplehr)
 
  5. Create a PeopleHR trial account and derive the API Key.
-	i) 		Using the URL "http://www.trial.peoplehr.com/" create a PeopleHR trial account.
-	ii)		Login to the created People HR account and go to Settings >> API >> Under API Key Management >> Create an API Key.
-	iii)	Create at least two projects and at least one task should be added for each of them. 
+	i)   Using the URL "http://www.trial.peoplehr.com/" create a PeopleHR trial account.
+	ii)  Login to the created People HR account and go to Settings >> API >> Under API Key Management >> Create an API Key.
+	iii) Create at least two projects and at least one task should be added for each of them. 
 			Go to Settings >> Timesheets >> Project/Task >> Select '+(Manage This List)' from the drop down list and add project/task.
 			Keep the project names and the task names for further reference.
 
  6. Update the PeopleHR properties file at location "{PEOPLEHR_CONNECTOR_HOME}/src/test/resources/artifacts/ESB/connector/config" as below.
 	
-	i)		apiUrl 							- 	Use "https://api.peoplehr.net".
-	ii) 	apiKey							-   Use the API Key obtained under Step 5 ii).
-	iii)	empIdMandatory					- 	Use a unique employee ID.
-	iv)		empIdOptional					- 	Use a unique employee ID.
-	v)		firstName						- 	Use a valid string as the first name of the employee.
-	vi)		lastName						-   Use a valid string as the last name of the employee.
-	vii)	startDate			   			-   Use a valid working date in the format of YYYY-MM-DD.
-	viii)	jobRole			        		-   Use a valid job role to which the employee can be assigned.
-	ix)	    department			    		-   Use a valid department name where the employee can be appointed(if a non existing department name is used, then the department will be automatically created and be used).
-	x)	    empEmail			    		- 	Use a valid and unique email for the employee.
-	xi)	    empDateOfBirth					- 	Use a valid date in the format of YYYY-MM-DD.
-	xii)	effectiveFromDate				- 	Use a valid working date in the format of YYYY-MM-DD.
-	xiii)	salaryType			    		- 	Use a proper salary type (e.g:-Annual).
-	xiv)	salaryAmount					- 	Amount of the salary in the format of D.DDDD (D stands for a Digit).
-	xv)	    timesheetProject				- 	Use the project name to which the time sheet is created for. Use a project name obtained under Step 5 iii).
-	xvi)	projectTimeSheetquantity		- 	Use a quantity with the format D.DD (D stands for a Digit).
-	xvii)	projectTimeSheetTask			- 	Use a valid task for the project time sheet. Use a task name obtained under 5 iii).
-	xviii)	updatedTimesheetProject			- 	Use the project name to which the time sheet is created for.Use a project name obtained under Step 5 iii)which is not same as 'timesheetProject'.
-	xix)	updatedProjectTimesheetQuantity	- 	Use a quantity with the format D.DD (D stands for a Digit).Provide a value different to 'projectTimeSheetquantity'.
-	xx)	    updatedProjectTimesheetTask		- 	Use a valid task for the project time sheet.Use a task name obtained under 5 iii)other than the value given for 'projectTimeSheetTask'.
-	xxi)	firstNameUpdated				- 	Use a valid string as the first name of the employee other than the value given for 'firstName'.
-	xxii)	empEmailUpdated					- 	Use a valid and unique email for the employee other than the value given for 'empEmail'.
-	xxiii)	leavePaidStatus					- 	Use a valid leave paid status.
-	xxiv)	testComment						- 	Mention a valid string value for comments.
-	xxv)	timeIn1							- 	A valid time in the format of hh:mm.
-	xxvi)	timeIn1update					- 	A valid time in the format of hh:mm. This should be a different time than timeIn1.
-	xxvii)	leaveDate						- 	Use a valid future working date in the format of YYYY-MM-DD.
-	xxviii)	timesheetDate					- 	Use a valid future working date in the format of YYYY-MM-DD.
-	xxix)	timesheetDateOpt				- 	Use a valid future working date in the format of YYYY-MM-DD.
+	i)      apiUrl                           - 	Use "https://api.peoplehr.net".
+	ii)     apiKey                           -      Use the API Key obtained under Step 5 ii).
+	iii)    empIdMandatory                   - 	Use a unique employee ID.
+	iv)     empIdOptional                    - 	Use a unique employee ID.
+	v)      firstName                        - 	Use a valid string as the first name of the employee.
+	vi)     lastName                         -      Use a valid string as the last name of the employee.
+	vii)    startDate                        -      Use a valid working date in the format of YYYY-MM-DD.
+	viii)   jobRole                          -      Use a valid job role to which the employee can be assigned.
+	ix)     department                       -      Use a valid department name where the employee can be appointed(if a non existing department name is used, then the department will be automatically created and be used).
+	x)      empEmail                         - 	Use a valid and unique email for the employee.
+	xi)     empDateOfBirth                   - 	Use a valid date in the format of YYYY-MM-DD.
+	xii)    effectiveFromDate                - 	Use a valid working date in the format of YYYY-MM-DD.
+	xiii)   salaryType                       - 	Use a proper salary type (e.g:-Annual).
+	xiv)    salaryAmount                     - 	Amount of the salary in the format of D.DDDD (D stands for a Digit).
+	xv)     timesheetProject                 - 	Use the project name to which the time sheet is created for. Use a project name obtained under Step 5 iii).
+	xvi)    projectTimeSheetquantity         - 	Use a quantity with the format D.DD (D stands for a Digit).
+	xvii)   projectTimeSheetTask             - 	Use a valid task for the project time sheet. Use a task name obtained under 5 iii).
+	xviii)  updatedTimesheetProject          - 	Use the project name to which the time sheet is created for.Use a project name obtained under Step 5 iii)which is not same as 'timesheetProject'.
+	xix)    updatedProjectTimesheetQuantity  - 	Use a quantity with the format D.DD (D stands for a Digit).Provide a value different to 'projectTimeSheetquantity'.
+	xx)     updatedProjectTimesheetTask      - 	Use a valid task for the project time sheet.Use a task name obtained under 5 iii)other than the value given for 'projectTimeSheetTask'.
+	xxi)    firstNameUpdated		 - 	Use a valid string as the first name of the employee other than the value given for 'firstName'.
+	xxii)   empEmailUpdated                  - 	Use a valid and unique email for the employee other than the value given for 'empEmail'.
+	xxiii)  leavePaidStatus			 - 	Use a valid leave paid status.
+	xxiv)   testComment			 - 	Mention a valid string value for comments.
+	xxv)    timeIn1				 - 	A valid time in the format of hh:mm.
+	xxvi)   timeIn1update			 - 	A valid time in the format of hh:mm. This should be a different time than timeIn1.
+	xxvii)  leaveDate			 - 	Use a valid future working date in the format of YYYY-MM-DD.
+	xxviii) timesheetDate			 - 	Use a valid future working date in the format of YYYY-MM-DD.
+	xxix)	timesheetDateOpt		 - 	Use a valid future working date in the format of YYYY-MM-DD.
 	
 	Note :- 
 		1. empIdMandatory, empIdOptional,empEmail and empEmailUpdated needs to be set with unique values before running the integration test teach time.
