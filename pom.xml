@@ -133,9 +133,9 @@
         </dependency>
     </dependencies>
     <scm>
-        <connection>scm:git:https://github.com/wso2-extensions/esb-connector-magento.git</connection>
-        <url>https://github.com/wso2-extensions/esb-connector-magento.git</url>
-        <developerConnection>scm:git:https://github.com/wso2-extensions/esb-connector-magento</developerConnection>
+        <connection>scm:git:https://github.com/wso2-extensions/esb-connector-peoplehr.git</connection>
+        <url>https://github.com/wso2-extensions/esb-connector-peoplehr.git</url>
+        <developerConnection>scm:git:https://github.com/wso2-extensions/esb-connector-peoplehr</developerConnection>
         <tag>HEAD</tag>
     </scm>
     <build>
