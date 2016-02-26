@@ -20,10 +20,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.carbon.connector</groupId>
-    <artifactId>org.wso2.carbon.connector.peopleHR</artifactId>
+    <artifactId>org.wso2.carbon.connector.peoplehr</artifactId>
     <packaging>jar</packaging>
     <version>1.0.1-SNAPSHOT</version>
-    <name>WSO2 Carbon - Mediation Library Connector For Peoplehr</name>
+    <name>WSO2 Carbon - Mediation Library Connector For PeopleHR</name>
     <url>http://wso2.org</url>
     <properties>
         <connector.name>peoplehr</connector.name>
