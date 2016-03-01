@@ -73,6 +73,7 @@
             <property name="timeOut5" expression="json-eval($.timeOut5)"/>
             <property name="oldStartDate" expression="json-eval($.oldStartDate)"/>
             <property name="oldEndDate" expression="json-eval($.oldEndDate)"/>
+            <property name="queryName" expression="json-eval($.queryName)"/>
             <peoplehr.init>
                 <employeeId>{$ctx:employeeId}</employeeId>
                 <apiUrl>{$ctx:apiUrl}</apiUrl>
@@ -241,6 +242,11 @@
                         <oldEndDate>{$ctx:oldEndDate}</oldEndDate>
                         <partOfDay>{$ctx:partOfDay}</partOfDay>
                     </peoplehr.updateAbsenceRecord>
+                </case>
+                <case regex="urn:query">
+                    <peoplehr.query>
+                        <queryName>{$ctx:queryName}</queryName>
+                    </peoplehr.query>
                 </case>
             </switch>
             <respond/>
