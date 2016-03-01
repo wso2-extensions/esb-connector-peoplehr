@@ -17,7 +17,7 @@
 ~  under the License.
 -->
 <template name="query" xmlns="http://ws.apache.org/ns/synapse">
-    <parameter name="queryName" description="The boolean flag to include salary history in response."/>
+    <parameter name="queryName" description=" query name as defined in the Query option in the peoplehr system."/>
     <sequence>
         <property name="uri.var.queryName" expression="$func:queryName"/>
         <payloadFactory media-type="json">
