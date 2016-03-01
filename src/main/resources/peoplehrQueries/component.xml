@@ -16,16 +16,11 @@
 ~  specific language governing permissions and limitations
 ~  under the License.
 -->
-<connector>
-    <component name="peoplehr" package="org.wso2.carbon.connector">
-        <dependency component="peoplehr-absence"/>
-        <dependency component="peoplehr-config"/>
-        <dependency component="peoplehr-employee"/>
-        <dependency component="peoplehr-projectTimesheet"/>
-        <dependency component="peoplehr-timesheet"/>
-        <dependency component="peoplehr-salary"/>
-        <dependency component="peoplehrQueries"/>
-        <description>wso2 connector library for PeopleHR</description>
-    </component>
-    <icon>icon/icon-small.gif</icon>
-</connector>
+<component name="peoplehrQueries" type="synapse/template">
+    <subComponents>
+        <component name="query">
+            <file>query.xml</file>
+            <description>Get Query Data By Query Name</description>
+        </component>
+    </subComponents>
+</component>

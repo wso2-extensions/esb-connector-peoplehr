@@ -18,10 +18,6 @@
 
 package org.wso2.carbon.connector.integration.test.peoplehr;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.testng.Assert;
@@ -29,6 +25,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.wso2.connector.integration.test.base.ConnectorIntegrationTestBase;
 import org.wso2.connector.integration.test.base.RestResponse;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PeoplehrConnectorIntegrationTest extends ConnectorIntegrationTestBase {
 
@@ -979,6 +979,38 @@ public class PeoplehrConnectorIntegrationTest extends ConnectorIntegrationTestBa
         RestResponse<JSONObject> apiRestResponse =
                 sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_updateAbsenceRecord_negative.json");
 
+        Assert.assertTrue(Boolean.parseBoolean(esbRestResponse.getBody().getString("isError")));
+        Assert.assertEquals(esbRestResponse.getBody().get("Message"), apiRestResponse.getBody().get("Message"));
+        Assert.assertEquals(esbRestResponse.getBody().get("Status"), apiRestResponse.getBody().get("Status"));
+    }
+
+    /**
+     * Positive test case for query method with mandatory parameters.
+     */
+    @Test(groups = {"wso2.esb"}, description = "peoplehr {query} integration test with mandatory parameters.")
+    public void testQueryWithMandatoryParameters() throws IOException, JSONException {
+        esbRequestHeadersMap.put("Action", "urn:query");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esbQueryWithMandatory.json");
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/Query";
+        RestResponse<JSONObject> apiRestResponse =
+                sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "apiQueryWithMandatory.json");
+        Assert.assertFalse(Boolean.parseBoolean(esbRestResponse.getBody().getString("isError")));
+        Assert.assertEquals(esbRestResponse.getBody().get("Status"), 0);
+        Assert.assertEquals(esbRestResponse.getBody().get("Message"), apiRestResponse.getBody().get("Message"));
+    }
+
+    /**
+     * Negative test case for query method.
+     */
+    @Test(groups = {"wso2.esb"}, description = "peoplehr {query} integration test with negative case.")
+    public void testQueryWithNegativeCase() throws IOException, JSONException {
+        esbRequestHeadersMap.put("Action", "urn:query");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esbQueryWithNegative.json");
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/Query";
+        RestResponse<JSONObject> apiRestResponse =
+                sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "apiQueryWithNegative.json");
         Assert.assertTrue(Boolean.parseBoolean(esbRestResponse.getBody().getString("isError")));
         Assert.assertEquals(esbRestResponse.getBody().get("Message"), apiRestResponse.getBody().get("Message"));
         Assert.assertEquals(esbRestResponse.getBody().get("Status"), apiRestResponse.getBody().get("Status"));
