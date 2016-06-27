@@ -10,8 +10,8 @@ Pre-requisites:
 Tested Platform: 
 
  - Microsoft WINDOWS V-7
- - UBUNTU 13.04
- - WSO2 ESB 4.9.0
+ - UBUNTU 13.04,14.04
+ - WSO2 ESB 5.0.0-BETA
 
 Note:
 	This test suite can be executed based on two scenarios.
@@ -20,14 +20,14 @@ Note:
 
 Steps to follow in setting integration test.
 
- 1. Download ESB 4.9.0 from official website.
+ 1. Download ESB 5.0.0-BETA from official website and extract the ESB and add "-XX:-UseSplitVerifier" under $JVM_MEM_OPTS into {ESB_HOME}/bin/wso2server.sh..
 
- 3. Compress modified ESB as wso2esb-4.9.0.zip and copy that zip file in to location "{PEOPLEHR_CONNECTOR_HOME}/repository/".
+ 3. Compress modified ESB as wso2esb-5.0.0-BETA.zip and copy that zip file in to location "{PEOPLEHR_CONNECTOR_HOME}/repository/".
 
  4. Follow the below mentioned steps for adding valid certificate to access peopleHr API over https.
 
    	i)   Extract the certificate from browser(Mozilla Firefox) by navigating to https://{instance_name}.peoplehr.net
-   	ii)  Go to new ESB 4.9.0 folder and place the downloaded certificate in both "<ESB_HOME>/repository/resources/security/" and "{peoplehr_CONNECTOR_HOME}/src/test/resources/keystores/products/" folders.
+   	ii)  Go to new ESB 5.0.0-BETA folder and place the downloaded certificate in both "<ESB_HOME>/repository/resources/security/" and "{peoplehr_CONNECTOR_HOME}/src/test/resources/keystores/products/" folders.
    	iii) Navigate to "<ESB_HOME>/repository/resources/security/" using command prompt and execute keytool -importcert -file CERT_FILE_NAME -keystore client-truststore.jks -alias "CERT_NAME" in command line to import peoplehr certificate in to keystore.
    		 Give "wso2carbon" as password. Press "Y" to complete certificate import process.
 
@@ -49,39 +49,75 @@ Steps to follow in setting integration test.
 
  6. Update the PeopleHR properties file at location "{PEOPLEHR_CONNECTOR_HOME}/src/test/resources/artifacts/ESB/connector/config" as below.
 	
-	i)      apiUrl                           - 	Use "https://api.peoplehr.net".
-	ii)     apiKey                           -      Use the API Key obtained under Step 5 ii).
-	iii)    empIdMandatory                   - 	Use a unique employee ID.
-	iv)     empIdOptional                    - 	Use a unique employee ID.
-	v)      firstName                        - 	Use a valid string as the first name of the employee.
-	vi)     lastName                         -      Use a valid string as the last name of the employee.
-	vii)    startDate                        -      Use a valid working date in the format of YYYY-MM-DD.
-	viii)   jobRole                          -      Use a valid job role to which the employee can be assigned.
-	ix)     department                       -      Use a valid department name where the employee can be appointed(if a non existing department name is used, then the department will be automatically created and be used).
-	x)      empEmail                         - 	Use a valid and unique email for the employee.
-	xi)     empDateOfBirth                   - 	Use a valid date in the format of YYYY-MM-DD.
-	xii)    effectiveFromDate                - 	Use a valid working date in the format of YYYY-MM-DD.
-	xiii)   salaryType                       - 	Use a proper salary type (e.g:-Annual).
-	xiv)    salaryAmount                     - 	Amount of the salary in the format of D.DDDD (D stands for a Digit).
-	xv)     timesheetProject                 - 	Use the project name to which the time sheet is created for. Use a project name obtained under Step 5 iii).
-	xvi)    projectTimeSheetquantity         - 	Use a quantity with the format D.DD (D stands for a Digit).
-	xvii)   projectTimeSheetTask             - 	Use a valid task for the project time sheet. Use a task name obtained under 5 iii).
-	xviii)  updatedTimesheetProject          - 	Use the project name to which the time sheet is created for.Use a project name obtained under Step 5 iii)which is not same as 'timesheetProject'.
-	xix)    updatedProjectTimesheetQuantity  - 	Use a quantity with the format D.DD (D stands for a Digit).Provide a value different to 'projectTimeSheetquantity'.
-	xx)     updatedProjectTimesheetTask      - 	Use a valid task for the project time sheet.Use a task name obtained under 5 iii)other than the value given for 'projectTimeSheetTask'.
-	xxi)    firstNameUpdated		 - 	Use a valid string as the first name of the employee other than the value given for 'firstName'.
-	xxii)   empEmailUpdated                  - 	Use a valid and unique email for the employee other than the value given for 'empEmail'.
-	xxiii)  leavePaidStatus			 - 	Use a valid leave paid status.
-	xxiv)   testComment			 - 	Mention a valid string value for comments.
-	xxv)    timeIn1				 - 	A valid time in the format of hh:mm.
-	xxvi)   timeIn1update			 - 	A valid time in the format of hh:mm. This should be a different time than timeIn1.
-	xxvii)  leaveDate			 - 	Use a valid future working date in the format of YYYY-MM-DD.
-	xxviii) timesheetDate			 - 	Use a valid future working date in the format of YYYY-MM-DD.
-	xxix)	timesheetDateOpt		 - 	Use a valid future working date in the format of YYYY-MM-DD.
+	I)      apiUrl                            -  Use "https://api.peoplehr.net".
+	II)     apiKey                            -  Use the API Key obtained under Step 5 ii).
+	III)    empIdMandatory                    -  Use a unique employee ID.
+	IV)     empIdOptional                     -  Use a unique employee ID.
+	V)      firstName                         -  Use a valid string as the first name of the employee.
+	VI)     lastName                          -  Use a valid string as the last name of the employee.
+	VII)    startDate                         -  Use a valid working date in the format of YYYY-MM-DD.
+	VIII)   jobRole                           -  Use a valid job role to which the employee can be assigned.
+	IX)     department                        -  Use a valid department name where the employee can be appointed(if a non eXIsting department name is used, then the department will be automatically created and be used).
+	X)      empEmail                          -  Use a valid and unique email for the employee.
+	XI)     empDateOfBirth                    -  Use a valid date in the format of YYYY-MM-DD.
+	XII)    effectiveFromDate                 -  Use a valid working date in the format of YYYY-MM-DD.
+	XIII)   salaryType                        -  Use a proper salary type (e.g:-Annual).
+	XIV)    salaryAmount                      -  Amount of the salary in the format of D.DDDD (D stands for a Digit).
+	XV)     timesheetProject                  -  Use the project name to which the time sheet is created for. Use a project name obtained under Step 5 iii).
+	XVi)    projectTimeSheetquantity          -  Use a quantity with the format D.DD (D stands for a Digit).
+	XVII)   projectTimeSheetTask              -  Use a valid task for the project time sheet. Use a task name obtained under 5 iii).
+	XVIII)  updatedTimesheetProject           -  Use the project name to which the time sheet is created for.Use a project name obtained under Step 5 iii)which is not same as 'timesheetProject'.
+	XIX)    updatedProjectTimesheetQuantity   -  Use a quantity with the format D.DD (D stands for a Digit).Provide a value different to 'projectTimeSheetquantity'.
+	XX)     updatedProjectTimesheetTask       -  Use a valid task for the project time sheet.Use a task name obtained under 5 iii)other than the value given for 'projectTimeSheetTask'.
+	XXI)    firstNameUpdated                  -  Use a valid string as the first name of the employee other than the value given for 'firstName'.
+	XXII)   empEmailUpdated                   -  Use a valid and unique email for the employee other than the value given for 'empEmail'.
+	XXIII)  leavePaidStatus                   -  Use a valid leave paid status.
+	XXIV)   testComment                       -  Mention a valid string value for comments.
+	XXV)    timeIn1                           -  A valid time in the format of hh:mm.
+	XXVI)   timeIn1update                     -  A valid time in the format of hh:mm. This should be a different time than timeIn1.
+	XXVII)  leaveDate                         -  Use a valid future working date in the format of YYYY-MM-DD.
+	XXVIII) timesheetDate                     -  Use a valid future working date in the format of YYYY-MM-DD.
+	XXIX)	timesheetDateOpt                  -  Use a valid future working date in the format of YYYY-MM-DD.
+	XXX)    oldEmployeeId                     -  Use unique employee ID to update employee ID..
+	XXXI)   newEmployeeId                     -  Use unique value for new employee ID.
+	XXXII)  location                          -  Location of the employee.
+	XXXIII) title                             -  Title of the employee.
+	XXXV)   company                           -  Name of the company.
+	XXXVI)  methodOfRecruitment               -  The method of the recruitment.
+	XXXVII) address                           -  Address of the employee.
+	XXXVIII)employmentType                    -  The employment type.
+	XXXIX)  personalPhoneNumber               -  The personal number of the employee.
+	XL)     reportsTo                         -  Email address of the person to whom the employee should report to.
+	XLI)    jobRoleEffectiveDate              -  The job effective date.
+	XLII)   empEmailOptional                  -  The Email for the employee for optional cases.
+	XLIII)  gender                            -  Employee gender.
+	XLIV)   leaveDateOpt                      -  The valid date for the optional cases.
+	XLV)    updatedDate                       -  The valid date for update methods.
+	XLVI)   queryName                         -  The name of the query.
+	XLVII)  negQueryName                      -  The query name for a negative case.
+	XLVIII) reportsToEffectiveDate            -  The effective date of the reportTo.
+	XLIX)   locationEffectiveDate             -  The effective date of the location.
+	L)      departmentEffectiveDate           -  The effective date of the department.
+	LI)     employmentTypeEffectiveDate       -  The effective date of the employment type.
+	LII)    companyEffectiveDate              -  The effective date of the company.
+	LIII)   includeLeavers                    -  Whether or not to include the leavers in the all employee details.
+	LIV)    finalEmploymentDate               -  The date of the final employment.
+	LV)     finalWorkingDate                  -  The final working date of the employee.
+	LVI)    fieldName                         -  The filed name to get the employee history.
+	LVII)   entitlementThisYear               -  The entitlement count for this year.
+	LVIII)  entitlementNextYear               -  The entitlement count for next year.
+	LIX)    file                              -  The content for a upload document
+	LX)     documentName                      -  The name of the document.
+	LXI)    startHolidayDate                  -  The start date of the holiday
+	LXII)   endHolidayDate                    -  The start end of the holiday
+	LXIII)  updatedStartHolidayDate           -  The updated start date of the holiday
+	LIV)    updatedEndHolidayDate             -  The updated end date of the holiday
+
 	
 	Note :- 
 		1. empIdMandatory, empIdOptional,empEmail and empEmailUpdated needs to be set with unique values before running the integration test teach time.
 		2. leaveDate, timesheetDate and timesheetDateOpt should contain three different date values.
+		3. create a new employee and set the employeeId as a value of oldEmployeeId.
 
  7. Navigate to "{PEOPLEHR_CONNECTOR_HOME}/" and run the following command.
       $ mvn clean install

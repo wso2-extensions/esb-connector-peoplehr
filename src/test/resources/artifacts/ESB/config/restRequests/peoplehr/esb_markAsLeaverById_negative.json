@@ -1,0 +1,12 @@
+{
+  "apiUrl": "%s(apiUrl)",
+  "apiKey": "%s(apiKey)",
+  "employeeId": "",
+  "reasonForLeaving":"",
+  "finalEmploymentDate":"%s(finalEmploymentDate)",
+  "finalWorkingDate":"%s(finalWorkingDate)",
+  "markAsLeaverImmediately":"true",
+  "additionalComments":"I will rejoin if possible",
+  "reEmployable":"YES",
+  "supportingComments":""
+}

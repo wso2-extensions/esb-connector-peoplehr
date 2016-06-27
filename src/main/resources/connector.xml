@@ -18,14 +18,21 @@
 -->
 <connector>
     <component name="peoplehr" package="org.wso2.carbon.connector">
-        <dependency component="peoplehr-absence"/>
-        <dependency component="peoplehr-config"/>
-        <dependency component="peoplehr-employee"/>
-        <dependency component="peoplehr-projectTimesheet"/>
-        <dependency component="peoplehr-timesheet"/>
-        <dependency component="peoplehr-salary"/>
-        <dependency component="peoplehrQueries"/>
+        <dependency component="absences"/>
+        <dependency component="config"/>
+        <dependency component="employees"/>
+        <dependency component="projectTimesheets"/>
+        <dependency component="timesheets"/>
+        <dependency component="salaries"/>
+        <dependency component="queries"/>
+        <dependency component="histories"/>
+        <dependency component="holidays"/>
+        <dependency component="holidayEntitlements"/>
+        <dependency component="documents"/>
         <description>wso2 connector library for PeopleHR</description>
+        <authenticationInfo>
+            https://docs.wso2.com/display/ESBCONNECTORS/Configuring+PeopleHR+Operations
+        </authenticationInfo>
     </component>
     <icon>icon/icon-small.gif</icon>
 </connector>

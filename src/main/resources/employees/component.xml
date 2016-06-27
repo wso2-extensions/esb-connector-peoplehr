@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+~  Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~  WSO2 Inc. licenses this file to you under the Apache License,
+~  Version 2.0 (the "License"); you may not use this file except
+~  in compliance with the License.
+~  You may obtain a copy of the License at
+~
+~   http://www.apache.org/licenses/LICENSE-2.0
+~
+~  Unless required by applicable law or agreed to in writing,
+~  software distributed under the License is distributed on an
+~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~  KIND, either express or implied.  See the License for the
+~  specific language governing permissions and limitations
+~  under the License.
+-->
+<component name="employees" type="synapse/template">
+    <subComponents>
+        <component name="createEmployee">
+            <file>createEmployee.xml</file>
+            <description>Create an employee.</description>
+        </component>
+        <component name="getEmployeeDetailById">
+            <file>getEmployeeDetailById.xml</file>
+            <description>Get details of an employee.</description>
+        </component>
+        <component name="updateEmployee">
+            <file>updateEmployee.xml</file>
+            <description>Update an existing employee.</description>
+        </component>
+        <component name="getAllEmployeeDetail">
+            <file>getAllEmployeeDetail.xml</file>
+            <description>Get details of all the employees.</description>
+        </component>
+        <component name="updateEmployeeId">
+            <file>updateEmployeeId.xml</file>
+            <description>Update the employee ID.</description>
+        </component>
+        <component name="markAsLeaverById">
+            <file>markAsLeaverById.xml</file>
+            <description>Mark as a leaver an employee by ID.</description>
+        </component>
+    </subComponents>
+</component>

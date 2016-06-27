@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+~  Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~  WSO2 Inc. licenses this file to you under the Apache License,
+~  Version 2.0 (the "License"); you may not use this file except
+~  in compliance with the License.
+~  You may obtain a copy of the License at
+~
+~   http://www.apache.org/licenses/LICENSE-2.0
+~
+~  Unless required by applicable law or agreed to in writing,
+~  software distributed under the License is distributed on an
+~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~  KIND, either express or implied.  See the License for the
+~  specific language governing permissions and limitations
+~  under the License.
+-->
+<template name="createHoliday" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="durationType" description="The duration type of the holiday."/>
+    <parameter name="startDate" description="The start date of the holiday."/>
+    <parameter name="endDate" description="The end date of the holiday."/>
+    <parameter name="durationInDays" description="The duration of the holiday in days."/>
+    <parameter name="partOfDay" description="The part of day of holiday."/>
+    <parameter name="durationInMinutes" description="The duration of the holiday in minutes."/>
+    <parameter name="comments" description="comments for the creating holiday."/>
+    <parameter name="employeeId" description="The ID of the employee."/>
+    <sequence>
+        <property name="uri.var.durationType" expression="$func:durationType"/>
+        <property name="uri.var.durationInDays" expression="$func:durationInDays"/>
+        <property name="uri.var.startDate" expression="$func:startDate"/>
+        <property name="uri.var.endDate" expression="$func:endDate"/>
+        <property name="uri.var.durationInMinutes" expression="$func:durationInMinutes"/>
+        <property name="uri.var.partOfDay" expression="$func:partOfDay"/>
+        <property name="uri.var.comments" expression="$func:comments"/>
+        <property name="uri.var.employeeId" expression="$func:employeeId"/>
+        <payloadFactory media-type="json">
+            <format>
+                {
+                    "APIKey": "$1",
+                    "Action": "AddNewHoliday",
+                    "EmployeeId": "$2",
+                    "DurationType": "$3",
+                    "StartDate": "$4",
+                    "EndDate": "$5",
+                    "DurationInDays": "$6",
+                    "DurationInMinutes":"$7"
+                }
+            </format>
+            <args>
+                <arg expression="$ctx:uri.var.apiKey"/>
+                <arg expression="$ctx:uri.var.employeeId"/>
+                <arg expression="$ctx:uri.var.durationType"/>
+                <arg expression="$ctx:uri.var.startDate"/>
+                <arg expression="$ctx:uri.var.endDate"/>
+                <arg expression="$ctx:uri.var.durationInDays"/>
+                <arg expression="$ctx:uri.var.durationInMinutes"/>
+            </args>
+        </payloadFactory>
+        <script language="js">
+            <![CDATA[
+	            // Set optional parameters
+	            var payload = mc.getPayloadJSON();
+	            var comments = mc.getProperty('uri.var.comments');
+	            var partOfDay = mc.getProperty('uri.var.partOfDay');
+
+	            if (partOfDay != null && partOfDay != "") {
+	                payload.PartOfDay = partOfDay;
+	            }
+	            if (comments != null && comments != "") {
+	                payload.Comments = comments;
+	            }
+	            mc.setPayloadJSON(payload);
+        	]]>
+        </script>
+        <call>
+            <endpoint>
+                <http method="post" uri-template="{uri.var.apiUrl}/Holiday"/>
+            </endpoint>
+        </call>
+        <!-- Remove custom header information in response -->
+        <header name="X-AspNet-Version" scope="transport" action="remove"/>
+        <header name="X-Powered-By" scope="transport" action="remove"/>
+        <header name="Access-Control-Allow-Headers" scope="transport" action="remove"/>
+        <header name="Access-Control-Allow-Origin" scope="transport" action="remove"/>
+        <header name="Access-Control-Allow-Methods" scope="transport" action="remove"/>
+        <header name="Cache-Control" scope="transport" action="remove"/>
+    </sequence>
+</template>

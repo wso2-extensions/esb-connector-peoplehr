@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+~  Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~  WSO2 Inc. licenses this file to you under the Apache License,
+~  Version 2.0 (the "License"); you may not use this file except
+~  in compliance with the License.
+~  You may obtain a copy of the License at
+~
+~   http://www.apache.org/licenses/LICENSE-2.0
+~
+~  Unless required by applicable law or agreed to in writing,
+~  software distributed under the License is distributed on an
+~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~  KIND, either express or implied.  See the License for the
+~  specific language governing permissions and limitations
+~  under the License.
+-->
+<template name="createSalary" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="effectiveFrom" description="Date from when the salary will be effective."/>
+    <parameter name="salaryType" description="Type of the salary."/>
+    <parameter name="paymentFrequency" description="How frequently the payment will be given"/>
+    <parameter name="salaryAmount" description="Amount of the salary."/>
+    <parameter name="currencyCode" description="The relevent currency code."/>
+    <parameter name="changeReason" description="The reason why the salary is being changed."/>
+    <parameter name="comments" description="Any additional comments can go here."/>
+    <parameter name="deductions" description="Details about the deductions from the salary."/>
+    <parameter name="entitlements" description="Details about the entitlements to the salary."/>
+    <parameter name="employeeId" description="The ID of the employee."/>
+    <sequence>
+        <property name="uri.var.effectiveFrom" expression="$func:effectiveFrom"/>
+        <property name="uri.var.salaryType" expression="$func:salaryType"/>
+        <property name="uri.var.paymentFrequency" expression="$func:paymentFrequency"/>
+        <property name="uri.var.salaryAmount" expression="$func:salaryAmount"/>
+        <property name="uri.var.currencyCode" expression="$func:currencyCode"/>
+        <property name="uri.var.changeReason" expression="$func:changeReason"/>
+        <property name="uri.var.comments" expression="$func:comments"/>
+        <property name="uri.var.deductions" expression="$func:deductions"/>
+        <property name="uri.var.entitlements" expression="$func:entitlements"/>
+        <property name="uri.var.employeeId" expression="$func:employeeId"/>
+        <payloadFactory media-type="json">
+            <format>
+                {
+                    "APIKey": "$1",
+                    "Action": "CreateNewSalary",
+                    "EmployeeId": "$2",
+                    "EffectiveFrom": "$3",
+                    "SalaryType": "$4",
+                    "PaymentFrequency": "$5",
+                    "SalaryAmount": "$6",
+                    "CurrencyCode":"$7",
+                    "ChangeReason": "$8"
+                }
+            </format>
+            <args>
+                <arg expression="$ctx:uri.var.apiKey"/>
+                <arg expression="$ctx:uri.var.employeeId"/>
+                <arg expression="$ctx:uri.var.effectiveFrom"/>
+                <arg expression="$ctx:uri.var.salaryType"/>
+                <arg expression="$ctx:uri.var.paymentFrequency"/>
+                <arg expression="$ctx:uri.var.salaryAmount"/>
+                <arg expression="$ctx:uri.var.currencyCode"/>
+                <arg expression="$ctx:uri.var.changeReason"/>
+            </args>
+        </payloadFactory>
+        <script language="js">
+            <![CDATA[
+        	    //Checking the optional paramters and create the payload accordingly
+        	    var comments=mc.getProperty('uri.var.comments');
+				var deductions=mc.getProperty('uri.var.deductions');
+				var entitlements=mc.getProperty('uri.var.entitlements');			
+				var payload = mc.getPayloadJSON();
+
+                if (comments != null && comments != "") {
+                   payload.Comments = comments;
+                }
+				if (deductions != null && deductions != "") {
+					payload.Deductions = eval("("+deductions+")");	
+				}
+				if (entitlements != null && entitlements != "") {
+					payload.Entitlements = eval("("+entitlements+")");	
+				}
+				mc.setPayloadJSON(payload);
+			]]>
+        </script>
+        <call>
+            <endpoint>
+                <http method="post" uri-template="{uri.var.apiUrl}/Salary"/>
+            </endpoint>
+        </call>
+        <!-- Remove response custom header information -->
+        <header name="X-AspNet-Version" scope="transport" action="remove"/>
+        <header name="X-Powered-By" scope="transport" action="remove"/>
+        <header name="Access-Control-Allow-Headers" scope="transport" action="remove"/>
+        <header name="Access-Control-Allow-Origin" scope="transport" action="remove"/>
+        <header name="Access-Control-Allow-Methods" scope="transport" action="remove"/>
+        <header name="Cache-Control" scope="transport" action="remove"/>
+    </sequence>
+</template>

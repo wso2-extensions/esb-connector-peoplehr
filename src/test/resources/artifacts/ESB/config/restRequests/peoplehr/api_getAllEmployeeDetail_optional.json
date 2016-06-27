@@ -1,0 +1,5 @@
+{
+  "APIKey": "%s(apiKey)",
+  "Action": "GetAllEmployeeDetail",
+  "IncludeLeavers":"%s(includeLeavers)"
+}

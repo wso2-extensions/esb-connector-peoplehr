@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+~  Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~  WSO2 Inc. licenses this file to you under the Apache License,
+~  Version 2.0 (the "License"); you may not use this file except
+~  in compliance with the License.
+~  You may obtain a copy of the License at
+~
+~   http://www.apache.org/licenses/LICENSE-2.0
+~
+~  Unless required by applicable law or agreed to in writing,
+~  software distributed under the License is distributed on an
+~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~  KIND, either express or implied.  See the License for the
+~  specific language governing permissions and limitations
+~  under the License.
+-->
+<template name="createEmployee" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="employeeId" description="The ID of the employee."/>
+    <parameter name="title" description="The title of the name."/>
+    <parameter name="firstName" description="FirstName of the employee."/>
+    <parameter name="lastName" description="LastName of the Employee."/>
+    <parameter name="email" description="Email address of the employee."/>
+    <parameter name="gender" description="Gender of the employee."/>
+    <parameter name="startDate" description="Working Start date of the employee."/>
+    <parameter name="dateOfBirth" description="Emplyee date of Birth."/>
+    <parameter name="reportsTo"
+               description="Email address of the person to whom the employee should report to."/>
+    <parameter name="jobRole" description="Job role of the employee."/>
+    <parameter name="location" description="Location where the employee is suppose to work."/>
+    <parameter name="department"
+               description="Department name where the emlployee is appointed to."/>
+    <parameter name="nationalInsuranceNumber"
+               description="National Isurance number of the employee."/>
+    <parameter name="nationality" description="The nationality of the employee."/>
+    <parameter name="employmentType" description="Type of the employment."/>
+    <parameter name="entitlementThisYear"
+               description="Whether or not the emplyee is entitled to this year."/>
+    <parameter name="entitlementNextYear"
+               description="Whether or not the emplyee is entitled to next year."/>
+    <parameter name="address" description="Address of the employee."/>
+    <parameter name="personalPhoneNumber"
+               description="The personal Phone Number of the employee."/>
+    <parameter name="apiColumn1" description="A custom api column for custom data."/>
+    <parameter name="apiColumn2" description="A custom api column for custom data."/>
+    <parameter name="apiColumn3" description="A custom api column for custom data."/>
+    <parameter name="apiColumn4" description="A custom api column for custom data."/>
+    <parameter name="apiColumn5" description="A custom api column for custom data."/>
+    <parameter name="jobRoleEffectiveDate" description="The effective date of job role."/>
+    <parameter name="company" description="The name of the company."/>
+    <parameter name="payrollCompany" description="The Payroll Company's Name."/>
+    <parameter name="payrollId" description="The ID of the payroll."/>
+    <parameter name="timeAndAttendanceId" description="The Time and Attendance ID."/>
+    <parameter name="rotaId" description="The Rota ID."/>
+    <parameter name="crmId" description="The CRM ID."/>
+    <parameter name="atsId" description="The ATS ID."/>
+    <parameter name="performanceId" description="The performance ID."/>
+    <parameter name="benefitsId" description="The Benefits ID."/>
+    <parameter name="system1Id" description="The System1 ID."/>
+    <parameter name="system2Id" description="The System2 ID."/>
+    <parameter name="system3Id" description="The System3 ID."/>
+    <parameter name="personalEmail" description="The personal Mail ID."/>
+    <parameter name="methodOfRecruitment" description="The recruitment method."/>
+    <sequence>
+        <property name="uri.var.employeeId" expression="$func:employeeId"/>
+        <property name="uri.var.title" expression="$func:title"/>
+        <property name="uri.var.firstName" expression="$func:firstName"/>
+        <property name="uri.var.lastName" expression="$func:lastName"/>
+        <property name="uri.var.email" expression="$func:email"/>
+        <property name="uri.var.gender" expression="$func:gender"/>
+        <property name="uri.var.startDate" expression="$func:startDate"/>
+        <property name="uri.var.dateOfBirth" expression="$func:dateOfBirth"/>
+        <property name="uri.var.jobRole" expression="$func:jobRole"/>
+        <property name="uri.var.location" expression="$func:location"/>
+        <property name="uri.var.department" expression="$func:department"/>
+        <property name="uri.var.reportsTo" expression="$func:reportsTo"/>
+        <property name="uri.var.nationalInsuranceNumber" expression="$func:nationalInsuranceNumber"
+        />
+        <property name="uri.var.nationality" expression="$func:nationality"/>
+        <property name="uri.var.employmentType" expression="$func:employmentType"/>
+        <property name="uri.var.entitlementThisYear" expression="$func:entitlementThisYear"/>
+        <property name="uri.var.entitlementNextYear" expression="$func:entitlementNextYear"/>
+        <property name="uri.var.address" expression="$func:address"/>
+        <property name="uri.var.personalPhoneNumber" expression="$func:personalPhoneNumber"/>
+        <property name="uri.var.apiColumn1" expression="$func:apiColumn1"/>
+        <property name="uri.var.apiColumn2" expression="$func:apiColumn2"/>
+        <property name="uri.var.apiColumn3" expression="$func:apiColumn3"/>
+        <property name="uri.var.apiColumn4" expression="$func:apiColumn4"/>
+        <property name="uri.var.apiColumn5" expression="$func:apiColumn5"/>
+        <property name="uri.var.jobRoleEffectiveDate" expression="$func:jobRoleEffectiveDate"/>
+        <property name="uri.var.company" expression="$func:company"/>
+        <property name="uri.var.payrollCompany" expression="$func:payrollCompany"/>
+        <property name="uri.var.payrollId" expression="$func:payrollId"/>
+        <property name="uri.var.rotaId" expression="$func:rotaId"/>
+        <property name="uri.var.crmId" expression="$func:crmId"/>
+        <property name="uri.var.atsId" expression="$func:atsId"/>
+        <property name="uri.var.performanceId" expression="$func:performanceId"/>
+        <property name="uri.var.benefitsId" expression="$func:benefitsId"/>
+        <property name="uri.var.system1Id" expression="$func:system1Id"/>
+        <property name="uri.var.system2Id" expression="$func:system2Id"/>
+        <property name="uri.var.system3Id" expression="$func:system3Id"/>
+        <property name="uri.var.personalEmail" expression="$func:personalEmail"/>
+        <property name="uri.var.methodOfRecruitment" expression="$func:methodOfRecruitment"/>
+        <payloadFactory media-type="json">
+            <format>
+                {
+                    "APIKey": "$1",
+                    "Action": "CreateNewEmployee",
+                    "EmployeeId":"$2",
+                    "FirstName":"$3",
+                    "LastName":"$4",
+                    "StartDate":"$5",
+                    "JobRole":"$6",
+                    "Location":"$7",
+                    "Department":"$8",
+                    "JobRoleEffectiveDate":"$9"
+                }
+            </format>
+            <args>
+                <arg expression="$ctx:uri.var.apiKey"/>
+                <arg expression="$ctx:uri.var.employeeId"/>
+                <arg expression="$ctx:uri.var.firstName"/>
+                <arg expression="$ctx:uri.var.lastName"/>
+                <arg expression="$ctx:uri.var.startDate"/>
+                <arg expression="$ctx:uri.var.jobRole"/>
+                <arg expression="$ctx:uri.var.location"/>
+                <arg expression="$ctx:uri.var.department"/>
+                <arg expression="$ctx:uri.var.jobRoleEffectiveDate"/>
+            </args>
+        </payloadFactory>
+        <script language="js">
+            <![CDATA[
+	            // Set optional parameters
+	            var payload = mc.getPayloadJSON();
+	            var title = mc.getProperty('uri.var.title');
+	            var email = mc.getProperty('uri.var.email');
+	            var reportsTo = mc.getProperty('uri.var.reportsTo');
+	            var gender = mc.getProperty('uri.var.gender');
+	            var dateOfBirth = mc.getProperty('uri.var.dateOfBirth');
+	            var nationalInsuranceNumber = mc.getProperty('uri.var.nationalInsuranceNumber');
+	            var nationality = mc.getProperty('uri.var.nationality');
+	            var employmentType = mc.getProperty('uri.var.employmentType');
+	            var entitlementThisYear = mc.getProperty('uri.var.entitlementThisYear');
+	            var entitlementNextYear = mc.getProperty('uri.var.entitlementNextYear');
+	            var address = mc.getProperty('uri.var.address');
+	            var personalPhoneNumber = mc.getProperty('uri.var.personalPhoneNumber');
+	            var apiColumn1 = mc.getProperty('uri.var.apiColumn1');
+	            var apiColumn2 = mc.getProperty('uri.var.apiColumn2');
+	            var apiColumn3 = mc.getProperty('uri.var.apiColumn3');
+	            var apiColumn4 = mc.getProperty('uri.var.apiColumn4');
+	            var apiColumn5 = mc.getProperty('uri.var.apiColumn5');
+	            var company = mc.getProperty('uri.var.company');
+	            var payrollCompany = mc.getProperty('uri.var.payrollCompany');
+	            var payrollId = mc.getProperty('uri.var.payrollId');
+	            var rotaId = mc.getProperty('uri.var.rotaId');
+	            var crmId = mc.getProperty('uri.var.crmId');
+	            var atsId = mc.getProperty('uri.var.atsId');
+	            var performanceId = mc.getProperty('uri.var.performanceId');
+	            var benefitsId = mc.getProperty('uri.var.benefitsId');
+	            var system1Id = mc.getProperty('uri.var.system1Id');
+	            var system2Id = mc.getProperty('uri.var.system2Id');
+	            var system3Id = mc.getProperty('uri.var.system3Id');
+	            var personalEmail = mc.getProperty('uri.var.personalEmail');
+	            var methodOfRecruitment = mc.getProperty('uri.var.methodOfRecruitment');
+
+	            if(title != null && title != "") {
+                    payload.Title = title;
+	            }
+	            if(reportsTo != null && reportsTo != "") {
+	            	payload.ReportsTo = reportsTo;
+	            }
+	            if(email != null && email != "") {
+	            	payload.Email = email;
+	            }
+	            if(gender != null && gender != "") {
+	            	payload.Gender = gender;
+	            }
+	            if(dateOfBirth != null && dateOfBirth != "") {
+	            	payload.DateOfBirth = dateOfBirth;
+	            }
+	            if(nationalInsuranceNumber != null && nationalInsuranceNumber != "") {
+	            	payload.NationalInsuranceNumber = nationalInsuranceNumber;
+	            }
+	            if(nationality != null && nationality != "") {
+	            	payload.Nationality = nationality;
+	            }
+	            if(employmentType != null && employmentType != "") {
+	            	payload.EmploymentType = employmentType;
+	            }
+	            if(entitlementThisYear != null && entitlementThisYear != "") {
+	            	payload.EntitlementThisYear = entitlementThisYear;
+	            }
+	            if(entitlementNextYear != null && entitlementNextYear != "") {
+	            	payload.EntitlementNextYear = entitlementNextYear;
+	            }
+	            if(address != null && address != "") {
+	            	payload.Address = address;
+	            }
+	            if(personalPhoneNumber != null && personalPhoneNumber != "") {
+	            	payload.PersonalPhoneNumber = personalPhoneNumber;
+	            }
+	            if(apiColumn1 != null && apiColumn1 != "") {
+	            	payload.APIColumn1 = apiColumn1;
+	            }
+	            if(apiColumn2 != null && apiColumn2 != "") {
+	            	payload.APIColumn2 = apiColumn2;
+	            }
+	            if(apiColumn3 != null && apiColumn3 != "") {
+	            	payload.APIColumn3 = apiColumn3;
+	            }
+	            if(apiColumn4 != null && apiColumn4 != "") {
+	            	payload.APIColumn4 = apiColumn4;
+	            }
+	            if(apiColumn5 != null && apiColumn5 != "") {
+	            	payload.APIColumn5 = apiColumn5;
+	            }
+                if(company != null && company != "") {
+                    payload.Company = company;
+                }
+                if(payrollCompany != null && payrollCompany != "") {
+                     payload["Payroll Company"] = payrollCompany;
+                }
+                if(payrollId != null && payrollId != "") {
+                    payload["Payroll ID"] = payrollId;
+                }
+                if(rotaId != null && rotaId != "") {
+                     payload["Rota ID"] = rotaId;
+                }
+                if(crmId != null && crmId != "") {
+                    payload["CRM ID"] = crmId;
+                }
+                if(atsId != null && atsId != "") {
+                    payload["ATS ID"] = atsId;
+                }
+                if(performanceId != null && performanceId != "") {
+                    payload["Performance ID"] = performanceId;
+                }
+                if(benefitsId != null && benefitsId != "") {
+                    payload["Benefits ID"] = benefitsId;
+                }
+                if(system1Id != null && system1Id != "") {
+                    payload["System1 ID"] = system1Id;
+                }
+                if(system2Id != null && system2Id != "") {
+                    payload["System2 ID"] = system2Id;
+                }
+                if(system3Id != null && system3Id != "") {
+                    payload["System3 ID"] = system3Id;
+                }
+                if(personalEmail != null && personalEmail != "") {
+                    payload.PersonalEmail = personalEmail;
+                }
+                if(methodOfRecruitment != null && methodOfRecruitment != "") {
+                    payload.MethodOfRecruitment = methodOfRecruitment;
+                }
+	            mc.setPayloadJSON(payload);
+        	]]>
+        </script>
+        <call>
+            <endpoint>
+                <http method="post" uri-template="{uri.var.apiUrl}/Employee"/>
+            </endpoint>
+        </call>
+        <!-- Remove response custom header information -->
+        <header name="X-AspNet-Version" scope="transport" action="remove"/>
+        <header name="X-Powered-By" scope="transport" action="remove"/>
+        <header name="Access-Control-Allow-Headers" scope="transport" action="remove"/>
+        <header name="Access-Control-Allow-Origin" scope="transport" action="remove"/>
+        <header name="Access-Control-Allow-Methods" scope="transport" action="remove"/>
+        <header name="Cache-Control" scope="transport" action="remove"/>
+    </sequence>
+</template>

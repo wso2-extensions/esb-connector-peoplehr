@@ -3,6 +3,12 @@
   "apiKey": "%s(apiKey)",
   "employeeId": "%s(empIdMandatory)",
   "reasonForChange": "Updating the employee",
+  "jobRoleEffectiveDate":"%s(jobRoleEffectiveDate)",
+  "reportsToEffectiveDate":"%s(reportsToEffectiveDate)",
+  "location":"%s(location)",
+  "locationEffectiveDate":"%s(locationEffectiveDate)",
+  "departmentEffectiveDate":"%s(departmentEffectiveDate)",
+  "employmentTypeEffectiveDate":"%s(employmentTypeEffectiveDate)",
   "dateOfBirth": "1987-05-10",
   "lastName": "LastNameUpdated",
   "firstName": "%s(firstNameUpdated)",
@@ -10,5 +16,9 @@
   "title": "Mr",
   "department": "CS",
   "employmentType": "Part Time",
-  "nationality": "SriLankan"
+  "nationality": "SriLankan",
+  "jobRole":"%s(jobRole)",
+  "company":"%s(company)",
+  "companyEffectiveDate":"%s(companyEffectiveDate)",
+  "reportsTo":"%s(reportsTo)"
 }

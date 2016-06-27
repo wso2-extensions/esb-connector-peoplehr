@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+~  Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~  WSO2 Inc. licenses this file to you under the Apache License,
+~  Version 2.0 (the "License"); you may not use this file except
+~  in compliance with the License.
+~  You may obtain a copy of the License at
+~
+~   http://www.apache.org/licenses/LICENSE-2.0
+~
+~  Unless required by applicable law or agreed to in writing,
+~  software distributed under the License is distributed on an
+~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~  KIND, either express or implied.  See the License for the
+~  specific language governing permissions and limitations
+~  under the License.
+-->
+<template name="updateEmployeeId" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="reasonForChange" description="The reason for updating the employee ID."/>
+    <parameter name="oldEmployeeId" description="The old employee ID."/>
+    <parameter name="newEmployeeId" description="The new employee ID."/>
+    <sequence>
+        <property name="uri.var.reasonForChange" expression="$func:reasonForChange"/>
+        <property name="uri.var.oldEmployeeId" expression="$func:oldEmployeeId"/>
+        <property name="uri.var.newEmployeeId" expression="$func:newEmployeeId"/>
+        <payloadFactory media-type="json">
+            <format>
+                {
+                    "APIKey": "$1",
+                    "Action": "UpdateEmployeeId",
+                    "ReasonForChange":"$2",
+                    "OldEmployeeId":"$3",
+                    "NewEmployeeId":"$4"
+                }
+            </format>
+            <args>
+                <arg  expression="$ctx:uri.var.apiKey"/>
+                <arg  expression="$ctx:uri.var.reasonForChange"/>
+                <arg  expression="$ctx:uri.var.oldEmployeeId"/>
+                <arg  expression="$ctx:uri.var.newEmployeeId"/>
+            </args>
+        </payloadFactory>
+        <call>
+            <endpoint>
+                <http method="post" uri-template="{uri.var.apiUrl}/Employee"/>
+            </endpoint>
+        </call>
+        <!-- Remove response custom header information -->
+        <header action="remove" name="X-AspNet-Version" scope="transport"/>
+        <header action="remove" name="X-Powered-By" scope="transport"/>
+        <header action="remove" name="Access-Control-Allow-Headers"
+                scope="transport"/>
+        <header action="remove" name="Access-Control-Allow-Origin"
+                scope="transport"/>
+        <header action="remove" name="Access-Control-Allow-Methods"
+                scope="transport"/>
+        <header action="remove" name="Cache-Control" scope="transport"/>
+    </sequence>
+</template>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+~  Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~  WSO2 Inc. licenses this file to you under the Apache License,
+~  Version 2.0 (the "License"); you may not use this file except
+~  in compliance with the License.
+~  You may obtain a copy of the License at
+~
+~   http://www.apache.org/licenses/LICENSE-2.0
+~
+~  Unless required by applicable law or agreed to in writing,
+~  software distributed under the License is distributed on an
+~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~  KIND, either express or implied.  See the License for the
+~  specific language governing permissions and limitations
+~  under the License.
+-->
+<template name="markAsLeaverById" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="employeeId" description="The ID of the employee."/>
+    <parameter name="reasonForLeaving" description="The reason for leaving an employee."/>
+    <parameter name="additionalComments" description="Additional comments."/>
+    <parameter name="finalEmploymentDate" description="The date of the final employment."/>
+    <parameter name="finalWorkingDate" description="The final working date of the employee."/>
+    <parameter name="markAsLeaverImmediately" description="Marks as a leaver immediately."/>
+    <parameter name="reportsTo"
+               description="Email address of the person to whom the employee should report to."/>
+    <parameter name="reEmployable" description="Whether that employee can be re-employable or not."/>
+    <parameter name="supportingComments" description="Another supporting comments."/>
+    <sequence>
+        <property name="uri.var.employeeId" expression="$func:employeeId"/>
+        <property name="uri.var.reasonForLeaving" expression="$func:reasonForLeaving"/>
+        <property name="uri.var.additionalComments" expression="$func:additionalComments"/>
+        <property name="uri.var.finalEmploymentDate" expression="$func:finalEmploymentDate"/>
+        <property name="uri.var.finalWorkingDate" expression="$func:finalWorkingDate"/>
+        <property name="uri.var.markAsLeaverImmediately"
+                  expression="$func:markAsLeaverImmediately"/>
+        <property name="uri.var.reportsTo" expression="$func:reportsTo"/>
+        <property name="uri.var.reEmployable" expression="$func:reEmployable"/>
+        <property name="uri.var.supportingComments" expression="$func:supportingComments"/>
+        <payloadFactory media-type="json">
+            <format>
+                {
+                    "APIKey": "$1",
+                    "Action": "MarkAsLeaverById",
+                    "ReasonforLeaving":"$2",
+                    "EmployeeId":"$3",
+                    "FinalEmploymentDate":"$4",
+                    "FinalWorkingDate":"$5",
+                    "MarkasLeaverImmediately":"$6",
+                    "AdditionalComments":"$7",
+                    "ReEmployable":"$8",
+                    "SupportingComments":"$9"
+                }
+            </format>
+            <args>
+                <arg  expression="$ctx:uri.var.apiKey"/>
+                <arg  expression="$ctx:uri.var.reasonForLeaving"/>
+                <arg  expression="$ctx:uri.var.employeeId"/>
+                <arg  expression="$ctx:uri.var.finalEmploymentDate"/>
+                <arg  expression="$ctx:uri.var.finalWorkingDate"/>
+                <arg  expression="$ctx:uri.var.markAsLeaverImmediately"/>
+                <arg  expression="$ctx:uri.var.additionalComments"/>
+                <arg  expression="$ctx:uri.var.reEmployable"/>
+                <arg  expression="$ctx:uri.var.supportingComments"/>
+            </args>
+        </payloadFactory>
+        <script language="js">
+            <![CDATA[
+	            // Set optional parameters
+	            var payload = mc.getPayloadJSON();
+	            var reportsTo = mc.getProperty('uri.var.reportsTo');
+
+	            if(reportsTo != null && reportsTo != "") {
+	            	payload.ReportsTo = reportsTo;
+	            }
+				mc.setPayloadJSON(payload);
+			]]>
+        </script>
+        <call>
+            <endpoint>
+                <http method="post" uri-template="{uri.var.apiUrl}/Employee"/>
+            </endpoint>
+        </call>
+        <!-- Remove response custom header information -->
+        <header action="remove" name="X-AspNet-Version" scope="transport"/>
+        <header action="remove" name="X-Powered-By" scope="transport"/>
+        <header action="remove" name="Access-Control-Allow-Headers"
+                scope="transport"/>
+        <header action="remove" name="Access-Control-Allow-Origin"
+                scope="transport"/>
+        <header action="remove" name="Access-Control-Allow-Methods"
+                scope="transport"/>
+        <header action="remove" name="Cache-Control" scope="transport"/>
+    </sequence>
+</template>
