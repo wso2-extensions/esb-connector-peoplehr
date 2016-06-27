@@ -17,7 +17,7 @@
 ~  under the License.
 -->
 <template name="deleteProjectTimesheet" xmlns="http://ws.apache.org/ns/synapse">
-    <parameter name="transactionId" description="The transaction id of the timesheets."/>
+    <parameter name="transactionId" description="The transaction id of the timesheet."/>
     <parameter name="employeeId" description="The ID of the employee."/>
     <sequence>
         <property name="uri.var.transactionId" expression="$func:transactionId"/>

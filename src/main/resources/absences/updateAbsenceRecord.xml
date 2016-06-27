@@ -18,19 +18,19 @@
 -->
 <template name="updateAbsenceRecord" xmlns="http://ws.apache.org/ns/synapse">
     <parameter name="employeeId" description="The ID of the employee."/>
-    <parameter name="oldStartDate" description="The oldStartDate of the absences."/>
-    <parameter name="oldEndDate" description="The oldEndDate of the absences."/>
-    <parameter name="durationType" description="The duration type of the absences."/>
-    <parameter name="reason" description="The reason for the absences."/>
+    <parameter name="oldStartDate" description="The oldStartDate of the absence."/>
+    <parameter name="oldEndDate" description="The oldEndDate of the absence."/>
+    <parameter name="durationType" description="The duration type of the absence."/>
+    <parameter name="reason" description="The reason for the absence."/>
     <parameter name="startDate" description="The start date of the absence period."/>
     <parameter name="endDate" description="The end date of the absence period."/>
-    <parameter name="duration" description="The duration of the absences."/>
-    <parameter name="partOfDay" description="The part of day of absences."/>
+    <parameter name="duration" description="The duration of the absence."/>
+    <parameter name="partOfDay" description="The part of day of absence."/>
     <parameter name="absencePaidStatus" description="The absence paid status."/>
     <parameter name="emergencyLeave"
                description="The flag specifying whether absence is an emergency leave."/>
-    <parameter name="addComments" description="The list of comments for the absences."/>
-    <parameter name="addFiles" description="The list of files related to the absences."/>
+    <parameter name="addComments" description="The list of comments for the absence."/>
+    <parameter name="addFiles" description="The list of files related to the absence."/>
     <sequence>
         <property name="uri.var.employeeId" expression="$func:employeeId"/>
         <property name="uri.var.oldStartDate" expression="$func:oldStartDate"/>

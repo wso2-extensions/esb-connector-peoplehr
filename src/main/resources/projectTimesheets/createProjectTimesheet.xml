@@ -21,14 +21,14 @@
     <parameter name="timesheetProject"
                description="The project name that the time sheet needs to be created."/>
     <parameter name="timesheetTask"
-               description="Taskname that needs to be entered in the timesheets."/>
+               description="Taskname that needs to be entered in the timesheet."/>
     <parameter name="timesheetDetail"
-               description="Detail name that needs to be entered in the timesheets."/>
-    <parameter name="startTime" description="Start time of the timesheets. Input format hh:mm."/>
-    <parameter name="endTime" description="End time of the timesheets. Input format hh:mm."/>
+               description="Detail name that needs to be entered in the timesheet."/>
+    <parameter name="startTime" description="Start time of the timesheet. Input format hh:mm."/>
+    <parameter name="endTime" description="End time of the timesheet. Input format hh:mm."/>
     <parameter name="totalHours"
                description="Total number of hours.Should match Start and End time."/>
-    <parameter name="quantity" description="The quantity of the timesheets."/>
+    <parameter name="quantity" description="The quantity of the timesheet."/>
     <parameter name="notes" description="Any additional details about the time sheet."/>
     <parameter name="employeeId" description="The ID of the employee."/>
     <sequence>

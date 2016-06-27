@@ -17,7 +17,7 @@
 ~  under the License.
 -->
 <template name="getTimesheet" xmlns="http://ws.apache.org/ns/synapse">
-    <parameter name="startDate" description="The date of the timesheets."/>
+    <parameter name="startDate" description="The date of the timesheet."/>
     <parameter name="endDate" description="The time entered as in."/>
     <parameter name="employeeId" description="The ID of the employee."/>
     <sequence>

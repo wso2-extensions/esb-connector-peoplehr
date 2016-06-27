@@ -19,29 +19,29 @@
 <template name="createEmployee" xmlns="http://ws.apache.org/ns/synapse">
     <parameter name="employeeId" description="The ID of the employee."/>
     <parameter name="title" description="The title of the name."/>
-    <parameter name="firstName" description="FirstName of the employees."/>
+    <parameter name="firstName" description="FirstName of the employee."/>
     <parameter name="lastName" description="LastName of the Employee."/>
-    <parameter name="email" description="Email address of the employees."/>
-    <parameter name="gender" description="Gender of the employees."/>
-    <parameter name="startDate" description="Working Start date of the employees."/>
+    <parameter name="email" description="Email address of the employee."/>
+    <parameter name="gender" description="Gender of the employee."/>
+    <parameter name="startDate" description="Working Start date of the employee."/>
     <parameter name="dateOfBirth" description="Emplyee date of Birth."/>
     <parameter name="reportsTo"
                description="Email address of the person to whom the employee should report to."/>
-    <parameter name="jobRole" description="Job role of the employees."/>
-    <parameter name="location" description="Location where the employees is suppose to work."/>
+    <parameter name="jobRole" description="Job role of the employee."/>
+    <parameter name="location" description="Location where the employee is suppose to work."/>
     <parameter name="department"
                description="Department name where the emlployee is appointed to."/>
     <parameter name="nationalInsuranceNumber"
-               description="National Isurance number of the employees."/>
-    <parameter name="nationality" description="The nationality of the employees."/>
+               description="National Isurance number of the employee."/>
+    <parameter name="nationality" description="The nationality of the employee."/>
     <parameter name="employmentType" description="Type of the employment."/>
     <parameter name="entitlementThisYear"
                description="Whether or not the emplyee is entitled to this year."/>
     <parameter name="entitlementNextYear"
                description="Whether or not the emplyee is entitled to next year."/>
-    <parameter name="address" description="Address of the employees."/>
+    <parameter name="address" description="Address of the employee."/>
     <parameter name="personalPhoneNumber"
-               description="The personal Phone Number of the employees."/>
+               description="The personal Phone Number of the employee."/>
     <parameter name="apiColumn1" description="A custom api column for custom data."/>
     <parameter name="apiColumn2" description="A custom api column for custom data."/>
     <parameter name="apiColumn3" description="A custom api column for custom data."/>

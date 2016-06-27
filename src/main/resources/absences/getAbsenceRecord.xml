@@ -18,8 +18,8 @@
 -->
 <template name="getAbsenceRecord" xmlns="http://ws.apache.org/ns/synapse">
     <parameter name="employeeId" description="The ID of the employee."/>
-    <parameter name="startDate" description="The startDate of the absences."/>
-    <parameter name="endDate" description="The endDate of the absences."/>
+    <parameter name="startDate" description="The startDate of the absence."/>
+    <parameter name="endDate" description="The endDate of the absence."/>
     <sequence>
         <property name="uri.var.employeeId" expression="$func:employeeId"/>
         <property name="uri.var.startDate" expression="$func:startDate"/>
