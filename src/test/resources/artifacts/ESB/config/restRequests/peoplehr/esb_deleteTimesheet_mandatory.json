@@ -1,0 +1,6 @@
+{
+  "apiUrl": "%s(apiUrl)",
+  "apiKey": "%s(apiKey)",
+  "employeeId": "%s(empIdOptional)",
+  "timesheetDate":"%s(timesheetDateOpt)"
+}

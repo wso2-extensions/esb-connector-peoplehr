@@ -47,7 +47,8 @@
         <property name="uri.var.deputyApiUrl" expression="$func:deputyApiUrl"/>
         <property name="uri.var.deputyAccessToken" expression="$func:deputyAccessToken"/>
         <property name="uri.var.deputyLeaveStatus" expression="$func:deputyLeaveStatus"/>
-        <property name="uri.var.deputyLeaveApprovalComment" expression="$func:deputyLeaveApprovalComment"/>
+        <property name="uri.var.deputyLeaveApprovalComment"
+                  expression="$func:deputyLeaveApprovalComment"/>
         <property name="uri.var.deputyLeaveComment" expression="$func:deputyLeaveComment"/>
         <!-- Calling the Zoho People getRecord method -->
         <zohopeople.init>
@@ -60,7 +61,8 @@
             <formLinkName>P_Employee</formLinkName>
         </zohopeople.getRecord>
         <!-- Retrieving the employee id from the employee record -->
-        <property name="uri.var.zohoPeopleEmployeeId" expression="json-eval($.response.result..EmployeeID[0])"/>
+        <property name="uri.var.zohoPeopleEmployeeId"
+                  expression="json-eval($.response.result..EmployeeID[0])"/>
         <!-- Zoho People employee record parameter to be used in responseHandlerTemplate -->
         <property name="uri.var.zohoEmpPeopleId"
                   expression="fn:concat('employee_record_id:',get-property('uri.var.zohoPeopleEmpRecordId'))"/>
@@ -129,7 +131,8 @@
                         <property name="uri.var.zohoPeopleErrorMessage"
                                   expression="json-eval($.response.errors..message)"/>
                         <!-- Check weather an Error is present in getLeaveTypes method -->
-                        <filter source="boolean(get-property('uri.var.zohoPeopleErrorMessage'))" regex="true">
+                        <filter source="boolean(get-property('uri.var.zohoPeopleErrorMessage'))"
+                                regex="true">
                             <then>
                                 <script language="js">
                                     <![CDATA[
@@ -151,7 +154,8 @@
                                     <with-param name="activity" value="zohopeople_getLeaveTypes"/>
                                     <with-param name="id" value="null"/>
                                     <with-param name="status" value="Error"/>
-                                    <with-param name="message" value="{$ctx:uri.var.zohoPeopleResponseMessage}"/>
+                                    <with-param name="message"
+                                                value="{$ctx:uri.var.zohoPeopleResponseMessage}"/>
                                 </call-template>
                                 <loopback/>
                             </then>
@@ -160,11 +164,14 @@
                         <!-- Variable to store the leave type id in Zoho People -->
                         <property name="uri.var.leaveTypeId" value="" scope="operation"/>
                         <!-- FOR EACH Leave type check : BEGIN -->
-                        <iterate continueParent="true" id="leaveTypes" expression="//response/result" sequential="true">
+                        <iterate continueParent="true" id="leaveTypes"
+                                 expression="//response/result" sequential="true">
                             <target>
                                 <sequence>
-                                    <property name="uri.var.zpLeaveTypeName" expression="//result/Name/text()"/>
-                                    <property name="uri.var.zpLeaveTypeId" expression="//result/Id/text()"/>
+                                    <property name="uri.var.zpLeaveTypeName"
+                                              expression="//result/Name/text()"/>
+                                    <property name="uri.var.zpLeaveTypeId"
+                                              expression="//result/Id/text()"/>
                                     <filter
                                             xpath="get-property('uri.var.zohoPeopleLeaveType' ) = get-property('uri.var.zpLeaveTypeName')">
                                         <property name="uri.var.leaveTypeId"
@@ -181,7 +188,8 @@
                                   expression="fn:concat('leave_type:',get-property('uri.var.zohoPeopleLeaveType'))"/>
                         <property name="messageType" value="application/json" scope="axis2"/>
                         <!-- Check for the existence of leave type id in Zoho People -->
-                        <filter source="boolean(get-property('uri.var.zohoPeopleLeaveTypeId'))" regex="false">
+                        <filter source="boolean(get-property('uri.var.zohoPeopleLeaveTypeId'))"
+                                regex="false">
                             <then>
                                 <!-- Zoho People get leave type failure response -->
                                 <property name="uri.var.message"
@@ -210,12 +218,14 @@
                                 <zohopeople.createLeave>
                                     <xmlData>{$ctx:uri.var.zohoPeopleXmlData}</xmlData>
                                 </zohopeople.createLeave>
-                                <property name="uri.var.zohoPeopleErrorCode" expression="json-eval($[0].code)"/>
+                                <property name="uri.var.zohoPeopleErrorCode"
+                                          expression="json-eval($[0].code)"/>
                                 <!-- Employee record id parameter to be used in responseHandlerTemplate -->
                                 <property name="uri.var.zohoEmployeeRecordId"
                                           expression="fn:concat('employee_record_id:',get-property('uri.var.zohoPeopleEmpRecordId'))"/>
                                 <!-- Check weather an Error code is present -->
-                                <filter source="boolean(get-property('uri.var.zohoPeopleErrorCode'))" regex="true">
+                                <filter source="boolean(get-property('uri.var.zohoPeopleErrorCode'))"
+                                        regex="true">
                                     <then>
                                         <!-- Zoho People createLeave failure response -->
                                         <property name="uri.var.zpCreateLeaveErrorMessage"
@@ -235,8 +245,10 @@
 									]]>
                                         </script>
                                         <call-template target="responseHandlerTemplate">
-                                            <with-param name="activity" value="zohopeople_createLeave"/>
-                                            <with-param name="id" value="{$ctx:uri.var.zohoEmployeeRecordId}"/>
+                                            <with-param name="activity"
+                                                        value="zohopeople_createLeave"/>
+                                            <with-param name="id"
+                                                        value="{$ctx:uri.var.zohoEmployeeRecordId}"/>
                                             <with-param name="status" value="Error"/>
                                             <with-param name="message"
                                                         value="{$ctx:uri.var.zpCreateLeaveErrorMessage}"/>
@@ -249,31 +261,41 @@
                                                   expression="fn:concat('Leave successfully added to the employee with Employee Id: ',get-property('uri.var.zohoPeopleEmployeeId'))"/>
                                         <!-- Generate the Zoho People create leave successful response -->
                                         <call-template target="responseHandlerTemplate">
-                                            <with-param name="activity" value="zohopeople_createLeave"/>
+                                            <with-param name="activity"
+                                                        value="zohopeople_createLeave"/>
                                             <with-param name="id" value="null"/>
-                                            <with-param name="status" value="{$ctx:uri.var.status}"/>
-                                            <with-param name="message" value="{$ctx:uri.var.message}"/>
+                                            <with-param name="status"
+                                                        value="{$ctx:uri.var.status}"/>
+                                            <with-param name="message"
+                                                        value="{$ctx:uri.var.message}"/>
                                         </call-template>
                                         <!-- Adding leave record into Deputy -->
                                         <deputy.init>
-                                            <accessToken>{$ctx:uri.var.deputyAccessToken}</accessToken>
+                                            <accessToken>{$ctx:uri.var.deputyAccessToken}
+                                            </accessToken>
                                             <apiUrl>{$ctx:uri.var.deputyApiUrl}</apiUrl>
                                         </deputy.init>
                                         <deputy.createLeave>
-                                            <startDate>{$ctx:uri.var.zohoPeopleLeaveFrom}</startDate>
+                                            <startDate>{$ctx:uri.var.zohoPeopleLeaveFrom}
+                                            </startDate>
                                             <status>{$ctx:uri.var.deputyLeaveStatus}</status>
                                             <endDate>{$ctx:uri.var.zohoPeopleLeaveTo}</endDate>
                                             <employeeId>{$ctx:uri.var.deputyEmployeeId}</employeeId>
-                                            <approvalComment>{$ctx:uri.var.deputyLeaveApprovalComment}</approvalComment>
+                                            <approvalComment>
+                                                {$ctx:uri.var.deputyLeaveApprovalComment}
+                                            </approvalComment>
                                         </deputy.createLeave>
                                         <property name="uri.var.deputyEmployeeReturnId"
                                                   expression="json-eval($.Employee)"/>
-                                        <property name="uri.var.deputyObjectId" expression="json-eval($.Id)"/>
-                                        <property name="uri.var.deputyErrorCode" expression="json-eval($.error.code)"/>
+                                        <property name="uri.var.deputyObjectId"
+                                                  expression="json-eval($.Id)"/>
+                                        <property name="uri.var.deputyErrorCode"
+                                                  expression="json-eval($.error.code)"/>
                                         <!-- Employee record id parameter to be used in responseHandlerTemplate -->
                                         <property name="uri.var.deputyEmployeeRecordId"
                                                   expression="fn:concat('deputy_employee_record_id:',get-property('uri.var.deputyEmployeeReturnId'))"/>
-                                        <filter source="boolean(get-property('uri.var.deputyErrorCode'))" regex="true">
+                                        <filter source="boolean(get-property('uri.var.deputyErrorCode'))"
+                                                regex="true">
                                             <then>
                                                 <!-- Deputy create leave failure response -->
                                                 <property name="uri.var.message"
@@ -281,10 +303,12 @@
                                                 <property name="uri.var.message"
                                                           expression="fn:concat('Failed to add Leave to the employee with Employee Id:',get-property('uri.var.zohoPeopleEmployeeId'), ', Error- ', get-property('uri.var.message'))"/>
                                                 <call-template target="responseHandlerTemplate">
-                                                    <with-param name="activity" value="deputy_createLeave"/>
+                                                    <with-param name="activity"
+                                                                value="deputy_createLeave"/>
                                                     <with-param name="id" value="null"/>
                                                     <with-param name="status" value="Error"/>
-                                                    <with-param name="message" value="{$ctx:uri.var.message}"/>
+                                                    <with-param name="message"
+                                                                value="{$ctx:uri.var.message}"/>
                                                 </call-template>
                                             </then>
                                             <else>
@@ -294,15 +318,20 @@
                                                           expression="fn:concat('Leave successfully added to the employee with Employee Id: ',get-property('uri.var.deputyEmployeeReturnId'))"/>
                                                 <!-- Generate the deputy leave added successful response -->
                                                 <call-template target="responseHandlerTemplate">
-                                                    <with-param name="activity" value="deputy_createLeave"/>
-                                                    <with-param name="id" value="{$ctx:uri.var.deputyObjectId}"/>
-                                                    <with-param name="status" value="{$ctx:uri.var.status}"/>
-                                                    <with-param name="message" value="{$ctx:uri.var.message}"/>
+                                                    <with-param name="activity"
+                                                                value="deputy_createLeave"/>
+                                                    <with-param name="id"
+                                                                value="{$ctx:uri.var.deputyObjectId}"/>
+                                                    <with-param name="status"
+                                                                value="{$ctx:uri.var.status}"/>
+                                                    <with-param name="message"
+                                                                value="{$ctx:uri.var.message}"/>
                                                 </call-template>
                                                 <!-- Creating the payload for parameter object in updateObject method -->
                                                 <payloadFactory media-type="json">
                                                     <format>
-                                                        {"deputyObject":{"Comment":"$1","Days": "$2"}}
+                                                        {"deputyObject":{"Comment":"$1","Days":
+                                                        "$2"}}
                                                     </format>
                                                     <args>
                                                         <arg expression="get-property('uri.var.deputyLeaveComment')"/>
@@ -313,12 +342,14 @@
                                                           expression="json-eval($.deputyObject)"/>
                                                 <!-- Update leave record in Deputy -->
                                                 <deputy.init>
-                                                    <accessToken>{$ctx:uri.var.deputyAccessToken}</accessToken>
+                                                    <accessToken>{$ctx:uri.var.deputyAccessToken}
+                                                    </accessToken>
                                                     <apiUrl>{$ctx:uri.var.deputyApiUrl}</apiUrl>
                                                 </deputy.init>
                                                 <deputy.updateObject>
                                                     <objectName>Leave</objectName>
-                                                    <objectId>{$ctx:uri.var.deputyObjectId}</objectId>
+                                                    <objectId>{$ctx:uri.var.deputyObjectId}
+                                                    </objectId>
                                                     <object>{$ctx:uri.var.deputyObject}</object>
                                                 </deputy.updateObject>
                                                 <property name="uri.var.deputyUpdatedObjectId"
@@ -331,12 +362,17 @@
                                                     <then>
                                                         <!-- Zoho People getLeaveTypes records failure response -->
                                                         <property name="uri.var.message"
-                                                                  expression="fn:concat('Leave successfully added to employee. Please update (deputy leave comment : ', get-property('uri.var.deputyLeaveComment'), ', and deputy leave duration: ', get-property('uri.var.leaveDuration'), ')')"/>
-                                                        <call-template target="responseHandlerTemplate">
-                                                            <with-param name="activity" value="deputy_createLeave"/>
-                                                            <with-param name="id" value="{$ctx:uri.var.objectId}"/>
-                                                            <with-param name="status" value="Error"/>
-                                                            <with-param name="message" value="{$ctx:uri.var.message}"/>
+                                                                  expression="fn:concat('Leave successfully added to employees. Please update (deputy leave comment : ', get-property('uri.var.deputyLeaveComment'), ', and deputy leave duration: ', get-property('uri.var.leaveDuration'), ')')"/>
+                                                        <call-template
+                                                                target="responseHandlerTemplate">
+                                                            <with-param name="activity"
+                                                                        value="deputy_createLeave"/>
+                                                            <with-param name="id"
+                                                                        value="{$ctx:uri.var.objectId}"/>
+                                                            <with-param name="status"
+                                                                        value="Error"/>
+                                                            <with-param name="message"
+                                                                        value="{$ctx:uri.var.message}"/>
                                                         </call-template>
                                                     </then>
                                                 </filter>

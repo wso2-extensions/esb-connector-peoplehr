@@ -1,0 +1,11 @@
+{
+  "apiUrl":"%s(apiUrl)",
+  "apiKey":"%s(apiKey)",
+  "employeeId":"%s(empIdOptional)",
+  "durationType":"1",
+  "startDate":"%s(leaveDateOpt)",
+  "endDate":"%s(leaveDateOpt)",
+  "durationInMinutes":"450",
+  "durationInDays":"1",
+  "comments":"%s(testComment)"
+}

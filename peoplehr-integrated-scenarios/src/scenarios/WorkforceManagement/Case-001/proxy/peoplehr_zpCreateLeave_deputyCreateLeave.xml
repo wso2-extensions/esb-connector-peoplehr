@@ -16,7 +16,8 @@
 ~  specific language governing permissions and limitations
 ~  under the License.
 -->
-<proxy xmlns="http://ws.apache.org/ns/synapse" name="peoplehr_zpCreateLeave_deputyCreateLeave" transports="https,http"
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="peoplehr_zpCreateLeave_deputyCreateLeave"
+       transports="https,http"
        statistics="disable" trace="disable" startOnLoad="true">
     <target>
         <inSequence onError="faultHandlerSeq">
@@ -32,7 +33,8 @@
             <property name="deputyAccessToken" expression="json-eval($.deputyAccessToken)"/>
             <property name="deputyApiUrl" expression="json-eval($.deputyApiUrl)"/>
             <property name="deputyLeaveStatus" expression="json-eval($.deputyLeaveStatus)"/>
-            <property name="deputyLeaveApprovalComment" expression="json-eval($.deputyLeaveApprovalComment)"/>
+            <property name="deputyLeaveApprovalComment"
+                      expression="json-eval($.deputyLeaveApprovalComment)"/>
             <property name="deputyLeaveComment" expression="json-eval($.deputyLeaveComment)"/>
             <script language="js">
                 <![CDATA[
@@ -85,7 +87,8 @@
             </filter>
             <filter source="get-property('status')" regex="false">
                 <then>
-                    <property name="message" value="Sorry, the duration does not match with the date range."/>
+                    <property name="message"
+                              value="Sorry, the duration does not match with the date range."/>
                     <call-template target="responseHandlerTemplate">
                         <with-param name="id" value=" "/>
                         <with-param name="status" value="Error"/>
@@ -101,7 +104,8 @@
                         |
                         <with-param name="zohoPeopleAuthToken" value="{$ctx:zohoPeopleAuthToken}"/>
                         |
-                        <with-param name="zohoPeopleEmpRecordId" value="{$ctx:zohoPeopleEmpRecordId}"/>
+                        <with-param name="zohoPeopleEmpRecordId"
+                                    value="{$ctx:zohoPeopleEmpRecordId}"/>
                         |
                         <with-param name="zohoPeopleLeaveType" value="{$ctx:zohoPeopleLeaveType}"/>
                         |
@@ -119,7 +123,8 @@
                         |
                         <with-param name="deputyLeaveStatus" value="{$ctx:deputyLeaveStatus}"/>
                         |
-                        <with-param name="deputyLeaveApprovalComment" value="{$ctx:deputyLeaveApprovalComment}"/>
+                        <with-param name="deputyLeaveApprovalComment"
+                                    value="{$ctx:deputyLeaveApprovalComment}"/>
                         |
                         <with-param name="deputyLeaveComment" value="{$ctx:deputyLeaveComment}"/>
                         |

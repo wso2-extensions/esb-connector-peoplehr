@@ -1,0 +1,6 @@
+{
+  "APIKey": "%s(apiKey)",
+  "Action": "GetHistoryByEmployeeIdAndFieldName",
+  "EmployeeId":"%s(empIdMandatory)",
+  "FieldName": "%s(fieldName)"
+}

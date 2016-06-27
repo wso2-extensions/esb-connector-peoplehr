@@ -1,0 +1,7 @@
+{
+  "APIKey": "%s(apiKey)",
+  "Action": "GetHolidayDetail",
+  "EmployeeId": "%s(empIdOptional)",
+  "StartDate": "%s(leaveDateOpt)",
+  "EndDate": "%s(leaveDateOpt)"
+}

@@ -16,7 +16,8 @@
 ~  specific language governing permissions and limitations
 ~  under the License.
 -->
-<proxy xmlns="http://ws.apache.org/ns/synapse" name="peoplehr_retrieveAndCreateMonthlyLeaves" transports="https,http"
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="peoplehr_retrieveAndCreateMonthlyLeaves"
+       transports="https,http"
        statistics="disable" trace="disable" startOnLoad="true">
     <target>
         <inSequence onError="faultHandlerSeq">
@@ -86,12 +87,14 @@
                     <call-template target="responseHandlerTemplate">
                         <with-param name="activity" value="deputy_getLeaves"/>
                         <with-param name="status" value="Error"/>
-                        <with-param name="message" value="No Leaves were found for the given year and month"/>
+                        <with-param name="message"
+                                    value="No Leaves were found for the given year and month"/>
                     </call-template>
                     <loopback/>
                 </then>
             </filter>
-            <iterate id="leaveIterator" expression="//jsonElement" sequential="true" continueParent="true"
+            <iterate id="leaveIterator" expression="//jsonElement" sequential="true"
+                     continueParent="true"
                      preservePayload="true">
                 <target>
                     <sequence>
@@ -160,8 +163,10 @@
                                         <property name="message"
                                                   expression="fn:concat('Invalid leave duration: ',get-property('leaveDuration'))"/>
                                         <call-template target="responseHandlerTemplate">
-                                            <with-param name="activity" value="peoplehr_createAbsenceRecord"/>
-                                            <with-param name="id" value="{$ctx:deputyLeaveIdParam}"/>
+                                            <with-param name="activity"
+                                                        value="peoplehr_createAbsenceRecord"/>
+                                            <with-param name="id"
+                                                        value="{$ctx:deputyLeaveIdParam}"/>
                                             <with-param name="status" value="Error"/>
                                             <with-param name="message" value="{$ctx:message}"/>
                                         </call-template>
@@ -181,9 +186,12 @@
                                         </peoplehr.createAbsenceRecord>
                                         <filter source="$axis2:HTTP_SC" regex="200">
                                             <then>
-                                                <property name="isError" expression="//isError/text()"/>
-                                                <property name="message" expression="//Message/text()"/>
-                                                <filter source="get-property('isError')" regex="false">
+                                                <property name="isError"
+                                                          expression="//isError/text()"/>
+                                                <property name="message"
+                                                          expression="//Message/text()"/>
+                                                <filter source="get-property('isError')"
+                                                        regex="false">
                                                     <then>
                                                         <property name="status" value="Success"/>
                                                     </then>
@@ -199,8 +207,10 @@
                                             </else>
                                         </filter>
                                         <call-template target="responseHandlerTemplate">
-                                            <with-param name="activity" value="peoplehr_createAbsenceRecord"/>
-                                            <with-param name="id" value="{$ctx:deputyLeaveIdParam}"/>
+                                            <with-param name="activity"
+                                                        value="peoplehr_createAbsenceRecord"/>
+                                            <with-param name="id"
+                                                        value="{$ctx:deputyLeaveIdParam}"/>
                                             <with-param name="status" value="{$ctx:status}"/>
                                             <with-param name="message" value="{$ctx:message}"/>
                                         </call-template>
@@ -208,7 +218,8 @@
                                 </filter>
                             </else>
                         </filter>
-                        <property name="index" expression="get-property('operation','index') + 1" scope="operation"/>
+                        <property name="index" expression="get-property('operation','index') + 1"
+                                  scope="operation"/>
                     </sequence>
                 </target>
             </iterate>

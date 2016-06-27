@@ -1,7 +1,7 @@
 {
   "apiUrl": "%s(apiUrl)",
   "apiKey": "%s(apiKey)",
-  "employeeId": "%s(empIdMandatory)",
+  "employeeId": "%s(empIdOptional)",
   "timesheetDate": "%s(timesheetDateOpt)",
   "timeIn1": "%s(timeIn1)",
   "timeOut1": "23:59",

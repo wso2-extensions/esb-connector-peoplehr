@@ -16,7 +16,8 @@
 ~  specific language governing permissions and limitations
 ~  under the License.
 -->
-<proxy xmlns="http://ws.apache.org/ns/synapse" name="peoplehr_createEmployees" transports="https,http"
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="peoplehr_createEmployees"
+       transports="https,http"
        statistics="disable"
        trace="disable" startOnLoad="true">
     <target>
@@ -37,7 +38,8 @@
             <!-- Zoho People properties -->
             <property name="zohoPeopleApiUrl" expression="json-eval($.zohoPeopleApiUrl)"/>
             <property name="zohoPeopleAuthToken" expression="json-eval($.zohoPeopleAuthToken)"/>
-            <property name="zohoPeopleDepartmentId" expression="json-eval($.zohoPeopleDepartmentId)"/>
+            <property name="zohoPeopleDepartmentId"
+                      expression="json-eval($.zohoPeopleDepartmentId)"/>
             <property name="deputyApiUrl" expression="json-eval($.deputyApiUrl)"/>
             <property name="deputyAccessToken" expression="json-eval($.deputyAccessToken)"/>
             <property name="deputyCompanyId" expression="json-eval($.deputyCompanyId)"/>
@@ -49,7 +51,8 @@
             <property name="xeroApiUrl" expression="json-eval($.xeroApiUrl)"/>
             <property name="uri.var.index" value="0" scope="operation"/>
             <property name="uri.var.hiredCandidateIndex" value="0" scope="operation"/>
-            <property name="uri.var.employeeIdentifier" expression="get-property('employeeIdIndex')" scope="operation"/>
+            <property name="uri.var.employeeIdentifier" expression="get-property('employeeIdIndex')"
+                      scope="operation"/>
             <!-- Build the Date format for Zoho People -->
             <script language="js">
                 <![CDATA[
@@ -142,13 +145,15 @@
                     <loopback/>
                 </then>
             </filter>
-            <property name="uri.var.candidateCount" expression="count(//result/JobOpenings/row)" scope="operation"/>
+            <property name="uri.var.candidateCount" expression="count(//result/JobOpenings/row)"
+                      scope="operation"/>
             <!-- Checks if there are no candiadates for the given Job ID, if not returns an error response to user -->
             <filter xpath="0 = get-property('operation', 'uri.var.candidateCount')">
                 <then>
                     <!-- Successful response -->
                     <property name="uri.var.status" value="Skipped"/>
-                    <property name="uri.var.message" value="There are no candidates available for the given Job ID."/>
+                    <property name="uri.var.message"
+                              value="There are no candidates available for the given Job ID."/>
                     <call-template target="responseHandlerTemplate">
                         <with-param name="activity" value="peoplehr_createEmployees"/>
                         <with-param name="status" value="{$ctx:uri.var.status}"/>
@@ -166,49 +171,68 @@
                         <!-- Filter out only the Hired candidates to be created as employees -->
                         <filter xpath="//FL[@val='STATUS']='Hired'">
                             <then>
-                                <property name="uri.var.candidateId" expression="//FL[@val='CANDIDATEID']"/>
-                                <call-template target="peoplehr-retrieveCandidatesAndCreateEmployees">
+                                <property name="uri.var.candidateId"
+                                          expression="//FL[@val='CANDIDATEID']"/>
+                                <call-template
+                                        target="peoplehr-retrieveCandidatesAndCreateEmployees">
                                     <!-- parameter values will be passed on to a sequence template -->
                                     (
-                                    <with-param name="candidateId" value="{$ctx:uri.var.candidateId}"/>
+                                    <with-param name="candidateId"
+                                                value="{$ctx:uri.var.candidateId}"/>
                                     |
-                                    <with-param name="peopleHrApiUrl" value="{$ctx:peopleHrApiUrl}"/>
+                                    <with-param name="peopleHrApiUrl"
+                                                value="{$ctx:peopleHrApiUrl}"/>
                                     |
-                                    <with-param name="peopleHrApiKey" value="{$ctx:peopleHrApiKey}"/>
+                                    <with-param name="peopleHrApiKey"
+                                                value="{$ctx:peopleHrApiKey}"/>
                                     |
                                     <with-param name="location" value="{$ctx:location}"/>
                                     |
-                                    <with-param name="department" value="{$ctx:zohoPeopleDepartment}"/>
+                                    <with-param name="department"
+                                                value="{$ctx:zohoPeopleDepartment}"/>
                                     |
                                     <with-param name="startDate" value="{$ctx:startDate}"/>
                                     |
-                                    <with-param name="zohoRecruitApiUrl" value="{$ctx:zohoRecruitApiUrl}"/>
+                                    <with-param name="zohoRecruitApiUrl"
+                                                value="{$ctx:zohoRecruitApiUrl}"/>
                                     |
-                                    <with-param name="zohoRecruitAuthToken" value="{$ctx:zohoRecruitAuthToken}"/>
+                                    <with-param name="zohoRecruitAuthToken"
+                                                value="{$ctx:zohoRecruitAuthToken}"/>
                                     |
-                                    <with-param name="zohoRecruitScope" value="{$ctx:zohoRecruitScope}"/>
+                                    <with-param name="zohoRecruitScope"
+                                                value="{$ctx:zohoRecruitScope}"/>
                                     |
-                                    <with-param name="zohoPeopleApiUrl" value="{$ctx:zohoPeopleApiUrl}"/>
+                                    <with-param name="zohoPeopleApiUrl"
+                                                value="{$ctx:zohoPeopleApiUrl}"/>
                                     |
-                                    <with-param name="zohoPeopleAuthToken" value="{$ctx:zohoPeopleAuthToken}"/>
+                                    <with-param name="zohoPeopleAuthToken"
+                                                value="{$ctx:zohoPeopleAuthToken}"/>
                                     |
-                                    <with-param name="zohoPeopleDate" value="{$ctx:zohoPeopleDate}"/>
+                                    <with-param name="zohoPeopleDate"
+                                                value="{$ctx:zohoPeopleDate}"/>
                                     |
-                                    <with-param name="zohoPeopleDepartmentId" value="{$ctx:zohoPeopleDepartmentId}"/>
+                                    <with-param name="zohoPeopleDepartmentId"
+                                                value="{$ctx:zohoPeopleDepartmentId}"/>
                                     |
                                     <with-param name="deputyApiUrl" value="{$ctx:deputyApiUrl}"/>
                                     |
-                                    <with-param name="deputyAccessToken" value="{$ctx:deputyAccessToken}"/>
+                                    <with-param name="deputyAccessToken"
+                                                value="{$ctx:deputyAccessToken}"/>
                                     |
-                                    <with-param name="deputyCompanyId" value="{$ctx:deputyCompanyId}"/>
+                                    <with-param name="deputyCompanyId"
+                                                value="{$ctx:deputyCompanyId}"/>
                                     |
-                                    <with-param name="xeroConsumerKey" value="{$ctx:xeroConsumerKey}"/>
+                                    <with-param name="xeroConsumerKey"
+                                                value="{$ctx:xeroConsumerKey}"/>
                                     |
-                                    <with-param name="xeroConsumerSecret" value="{$ctx:xeroConsumerSecret}"/>
+                                    <with-param name="xeroConsumerSecret"
+                                                value="{$ctx:xeroConsumerSecret}"/>
                                     |
-                                    <with-param name="xeroAccessToken" value="{$ctx:xeroAccessToken}"/>
+                                    <with-param name="xeroAccessToken"
+                                                value="{$ctx:xeroAccessToken}"/>
                                     |
-                                    <with-param name="xeroAccessTokenSecret" value="{$ctx:xeroAccessTokenSecret}"/>
+                                    <with-param name="xeroAccessTokenSecret"
+                                                value="{$ctx:xeroAccessTokenSecret}"/>
                                     |
                                     <with-param name="xeroApiUrl" value="{$ctx:xeroApiUrl}"/>
                                     |
@@ -219,7 +243,8 @@
                                           scope="operation"/>
                             </then>
                         </filter>
-                        <property name="uri.var.index" expression="get-property('operation','uri.var.index') + 1"
+                        <property name="uri.var.index"
+                                  expression="get-property('operation','uri.var.index') + 1"
                                   scope="operation"/>
                     </sequence>
                 </target>

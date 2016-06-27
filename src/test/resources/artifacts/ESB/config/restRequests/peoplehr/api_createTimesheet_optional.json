@@ -1,7 +1,7 @@
 {
   "APIKey": "%s(apiKey)",
   "Action": "GetTimesheetDetail",
-  "EmployeeId": "%s(empIdMandatory)",
+  "EmployeeId": "%s(empIdOptional)",
   "StartDate": "%s(timesheetDateOpt)",
   "EndDate": "%s(timesheetDateOpt)"
 }
