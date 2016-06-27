@@ -20,15 +20,15 @@
     <subComponents>
         <component name="createEmployee">
             <file>createEmployee.xml</file>
-            <description>Create an employees.</description>
+            <description>Create an employee.</description>
         </component>
         <component name="getEmployeeDetailById">
             <file>getEmployeeDetailById.xml</file>
-            <description>Get details of an employees.</description>
+            <description>Get details of an employee.</description>
         </component>
         <component name="updateEmployee">
             <file>updateEmployee.xml</file>
-            <description>Update an existing employees.</description>
+            <description>Update an existing employee.</description>
         </component>
         <component name="getAllEmployeeDetail">
             <file>getAllEmployeeDetail.xml</file>

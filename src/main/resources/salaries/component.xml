@@ -20,11 +20,11 @@
     <subComponents>
         <component name="createSalary">
             <file>createSalary.xml</file>
-            <description>Create the salary for an employees.</description>
+            <description>Create the salary for an employee.</description>
         </component>
         <component name="getSalary">
             <file>getSalary.xml</file>
-            <description>Get an existing salary details for an employees.</description>
+            <description>Get an existing salary details for an employee.</description>
         </component>
         <component name="deleteSalary">
             <file>deleteSalary.xml</file>

@@ -17,6 +17,7 @@
 ~  under the License.
 -->
 <template name="createAbsenceRecord" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="employeeId" description="The ID of the employee."/>
     <parameter name="durationType" description="The duration type of the absences."/>
     <parameter name="reason" description="The reason for the absences."/>
     <parameter name="startDate" description="The start date of the absence period."/>
@@ -29,6 +30,7 @@
     <parameter name="addComments" description="The list of comments for the absences."/>
     <parameter name="addFiles" description="The list of files related to the absences."/>
     <sequence>
+        <property name="uri.var.employeeId" expression="$func:employeeId"/>
         <property name="uri.var.durationType" expression="$func:durationType"/>
         <property name="uri.var.reason" expression="$func:reason"/>
         <property name="uri.var.startDate" expression="$func:startDate"/>

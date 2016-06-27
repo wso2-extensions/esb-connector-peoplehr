@@ -24,7 +24,7 @@
         </component>
         <component name="getDocumentById">
             <file>getDocumentById.xml</file>
-            <description>Get particular document details for an employees.</description>
+            <description>Get particular document details for an employee.</description>
         </component>
         <component name="uploadEmployeeDocument">
             <file>uploadEmployeeDocument.xml</file>

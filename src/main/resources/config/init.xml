@@ -19,11 +19,9 @@
 <template name="init" xmlns="http://ws.apache.org/ns/synapse">
     <parameter name="apiUrl" description="The URL of the PeopleHR REST API."/>
     <parameter name="apiKey" description="The apiKey associated for the user account."/>
-    <parameter name="employeeId" description="The ID of the employee."/>
     <sequence>
         <property name="uri.var.apiUrl" expression="$func:apiUrl"/>
         <property name="uri.var.apiKey" expression="$func:apiKey"/>
-        <property name="uri.var.employeeId" expression="$func:employeeId"/>
         <!-- If the apiUrl is not specified, set the default value as https://api.peoplehr.net -->
         <filter source="boolean($ctx:uri.var.apiUrl)" regex="false">
             <then>

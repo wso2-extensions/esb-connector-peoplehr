@@ -20,19 +20,19 @@
     <subComponents>
         <component name="createAbsenceRecord">
             <file>createAbsenceRecord.xml</file>
-            <description>Add a leave record for an employees.</description>
+            <description>Add a leave record for an employee.</description>
         </component>
         <component name="getAbsenceRecord">
             <file>getAbsenceRecord.xml</file>
-            <description>Get leave details for an employees.</description>
+            <description>Get leave details for an employee.</description>
         </component>
         <component name="updateAbsenceRecord">
             <file>updateAbsenceRecord.xml</file>
-            <description>Update the leave details.</description>
+            <description>Update the leave details for an employee.</description>
         </component>
         <component name="deleteAbsence">
             <file>deleteAbsence.xml</file>
-            <description>Delete the leave details.</description>
+            <description>Delete the leave details of an employee.</description>
         </component>
     </subComponents>
 </component>
