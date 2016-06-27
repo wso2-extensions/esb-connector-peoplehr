@@ -145,13 +145,13 @@
             <property name="description" expression="json-eval($.description)"/>
             <property name="transactionId" expression="json-eval($.transactionId)"/>
             <peoplehr.init>
-                <employeeId>{$ctx:employeeId}</employeeId>
                 <apiUrl>{$ctx:apiUrl}</apiUrl>
                 <apiKey>{$ctx:apiKey}</apiKey>
             </peoplehr.init>
             <switch source="get-property('transport', 'Action')">
                 <case regex="urn:createEmployee">
                     <peoplehr.createEmployee>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <dateOfBirth>{$ctx:dateOfBirth}</dateOfBirth>
                         <lastName>{$ctx:lastName}</lastName>
                         <startDate>{$ctx:startDate}</startDate>
@@ -193,6 +193,7 @@
                 </case>
                 <case regex="urn:updateEmployee">
                     <peoplehr.updateEmployee>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <jobRoleEffectiveDate>{$ctx:jobRoleEffectiveDate}</jobRoleEffectiveDate>
                         <reportsToEffectiveDate>{$ctx:reportsToEffectiveDate}</reportsToEffectiveDate>
                         <locationEffectiveDate>{$ctx:locationEffectiveDate}</locationEffectiveDate>
@@ -239,7 +240,9 @@
                     </peoplehr.updateEmployee>
                 </case>
                 <case regex="urn:getEmployeeDetailById">
-                    <peoplehr.getEmployeeDetailById/>
+                    <peoplehr.getEmployeeDetailById>
+                    <employeeId>{$ctx:employeeId}</employeeId>
+                    </peoplehr.getEmployeeDetailById>
                 </case>
                 <case regex="urn:getAllEmployeeDetail">
                     <peoplehr.getAllEmployeeDetail>
@@ -255,6 +258,7 @@
                 </case>
                 <case regex="urn:markAsLeaverById">
                     <peoplehr.markAsLeaverById>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <reasonForLeaving>{$ctx:reasonForLeaving}</reasonForLeaving>
                         <additionalComments>{$ctx:additionalComments}</additionalComments>
                         <finalEmploymentDate>{$ctx:finalEmploymentDate}</finalEmploymentDate>
@@ -267,6 +271,7 @@
                 </case>
                 <case regex="urn:createTimesheet">
                     <peoplehr.createTimesheet>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <timesheetDate>{$ctx:timesheetDate}</timesheetDate>
                         <timeIn1>{$ctx:timeIn1}</timeIn1>
                         <timeOut1>{$ctx:timeOut1}</timeOut1>
@@ -283,12 +288,14 @@
                 </case>
                 <case regex="urn:getTimesheet">
                     <peoplehr.getTimesheet>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <startDate>{$ctx:startDate}</startDate>
                         <endDate>{$ctx:endDate}</endDate>
                     </peoplehr.getTimesheet>
                 </case>
                 <case regex="urn:updateTimesheet">
                     <peoplehr.updateTimesheet>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <timeOut3>{$ctx:timeOut3}</timeOut3>
                         <timeIn1>{$ctx:timeIn1}</timeIn1>
                         <timeOut4>{$ctx:timeOut4}</timeOut4>
@@ -305,11 +312,13 @@
                 </case>
                 <case regex="urn:deleteTimesheet">
                     <peoplehr.deleteTimesheet>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <timesheetDate>{$ctx:timesheetDate}</timesheetDate>
                     </peoplehr.deleteTimesheet>
                 </case>
                 <case regex="urn:createSalary">
                     <peoplehr.createSalary>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <salaryAmount>{$ctx:salaryAmount}</salaryAmount>
                         <changeReason>{$ctx:changeReason}</changeReason>
                         <effectiveFrom>{$ctx:effectiveFrom}</effectiveFrom>
@@ -321,16 +330,19 @@
                 </case>
                 <case regex="urn:getSalary">
                     <peoplehr.getSalary>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <isIncludeHistory>{$ctx:isIncludeHistory}</isIncludeHistory>
                     </peoplehr.getSalary>
                 </case>
                 <case regex="urn:deleteSalary">
                     <peoplehr.deleteSalary>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <effectiveFrom>{$ctx:effectiveFrom}</effectiveFrom>
                     </peoplehr.deleteSalary>
                 </case>
                 <case regex="urn:createProjectTimesheet">
                     <peoplehr.createProjectTimesheet>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <startTime>{$ctx:startTime}</startTime>
                         <timesheetProject>{$ctx:timesheetProject}</timesheetProject>
                         <timesheetDetail>{$ctx:timesheetDetail}</timesheetDetail>
@@ -344,12 +356,14 @@
                 </case>
                 <case regex="urn:getProjectTimesheet">
                     <peoplehr.getProjectTimesheet>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <startDate>{$ctx:startDate}</startDate>
                         <endDate>{$ctx:endDate}</endDate>
                     </peoplehr.getProjectTimesheet>
                 </case>
                 <case regex="urn:updateProjectTimesheet">
                     <peoplehr.updateProjectTimesheet>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <startTime>{$ctx:startTime}</startTime>
                         <endTime>{$ctx:endTime}</endTime>
                         <timesheetProject>{$ctx:timesheetProject}</timesheetProject>
@@ -363,11 +377,13 @@
                 </case>
                 <case regex="urn:deleteProjectTimesheet">
                     <peoplehr.deleteProjectTimesheet>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <transactionId>{$ctx:transactionId}</transactionId>
                     </peoplehr.deleteProjectTimesheet>
                 </case>
                 <case regex="urn:createAbsenceRecord">
                     <peoplehr.createAbsenceRecord>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <startDate>{$ctx:startDate}</startDate>
                         <emergencyLeave>{$ctx:emergencyLeave}</emergencyLeave>
                         <duration>{$ctx:duration}</duration>
@@ -382,12 +398,14 @@
                 </case>
                 <case regex="urn:getAbsenceRecord">
                     <peoplehr.getAbsenceRecord>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <startDate>{$ctx:startDate}</startDate>
                         <endDate>{$ctx:endDate}</endDate>
                     </peoplehr.getAbsenceRecord>
                 </case>
                 <case regex="urn:updateAbsenceRecord">
                     <peoplehr.updateAbsenceRecord>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <oldStartDate>{$ctx:oldStartDate}</oldStartDate>
                         <startDate>{$ctx:startDate}</startDate>
                         <emergencyLeave>{$ctx:emergencyLeave}</emergencyLeave>
@@ -404,6 +422,7 @@
                 </case>
                 <case regex="urn:deleteAbsence">
                     <peoplehr.deleteAbsence>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <startDate>{$ctx:startDate}</startDate>
                         <endDate>{$ctx:endDate}</endDate>
                     </peoplehr.deleteAbsence>
@@ -415,11 +434,13 @@
                 </case>
                 <case regex="urn:getHistoryByEmployeeIdAndFieldName">
                     <peoplehr.getHistoryByEmployeeIdAndFieldName>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <fieldName>{$ctx:fieldName}</fieldName>
                     </peoplehr.getHistoryByEmployeeIdAndFieldName>
                 </case>
                 <case regex="urn:createHoliday">
                     <peoplehr.createHoliday>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <durationType>{$ctx:durationType}</durationType>
                         <startDate>{$ctx:startDate}</startDate>
                         <endDate>{$ctx:endDate}</endDate>
@@ -431,12 +452,14 @@
                 </case>
                 <case regex="urn:getHolidayDetail">
                     <peoplehr.getHolidayDetail>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <startDate>{$ctx:startDate}</startDate>
                         <endDate>{$ctx:endDate}</endDate>
                     </peoplehr.getHolidayDetail>
                 </case>
                 <case regex="urn:updateHoliday">
                     <peoplehr.updateHoliday>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <durationType>{$ctx:durationType}</durationType>
                         <startDate>{$ctx:startDate}</startDate>
                         <endDate>{$ctx:endDate}</endDate>
@@ -450,41 +473,51 @@
                 </case>
                 <case regex="urn:deleteHoliday">
                     <peoplehr.deleteHoliday>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <startDate>{$ctx:startDate}</startDate>
                         <endDate>{$ctx:endDate}</endDate>
                     </peoplehr.deleteHoliday>
                 </case>
                 <case regex="urn:getHolidayEntitlement">
                     <peoplehr.getHolidayEntitlement>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <startDate>{$ctx:startDate}</startDate>
                         <endDate>{$ctx:endDate}</endDate>
                     </peoplehr.getHolidayEntitlement>
                 </case>
                 <case regex="urn:getNextYearHolidayEntitlement">
-                    <peoplehr.getNextYearHolidayEntitlement/>
+                    <peoplehr.getNextYearHolidayEntitlement>
+                    <employeeId>{$ctx:employeeId}</employeeId>
+                    </peoplehr.getNextYearHolidayEntitlement>
                 </case>
                 <case regex="urn:updateHolidayEntitlement">
                     <peoplehr.updateHolidayEntitlement>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <entitlementThisYear>{$ctx:entitlementThisYear}</entitlementThisYear>
                         <reasonForChange>{$ctx:reasonForChange}</reasonForChange>
                     </peoplehr.updateHolidayEntitlement>
                 </case>
                 <case regex="urn:updateNextYearHolidayEntitlement">
                     <peoplehr.updateNextYearHolidayEntitlement>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <entitlementNextYear>{$ctx:entitlementNextYear}</entitlementNextYear>
                         <reasonForChange>{$ctx:reasonForChange}</reasonForChange>
                     </peoplehr.updateNextYearHolidayEntitlement>
                 </case>
                 <case regex="urn:getAllDocument">
-                    <peoplehr.getAllDocument/>
+                    <peoplehr.getAllDocument>
+                    <employeeId>{$ctx:employeeId}</employeeId>
+                    </peoplehr.getAllDocument>
                 </case>
                 <case regex="urn:getDocumentById">
                     <peoplehr.getDocumentById>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <documentId>{$ctx:documentId}</documentId>
                     </peoplehr.getDocumentById>
                 </case>
                 <case regex="urn:uploadEmployeeDocument">
                     <peoplehr.uploadEmployeeDocument>
+                        <employeeId>{$ctx:employeeId}</employeeId>
                         <category>{$ctx:category}</category>
                         <employeeAccess>{$ctx:employeeAccess}</employeeAccess>
                         <documentName>{$ctx:documentName}</documentName>

@@ -17,7 +17,7 @@
 ~  under the License.
 -->
 <template name="createTimesheet" xmlns="http://ws.apache.org/ns/synapse">
-    <parameter name="timesheetDate" description="The date of the timesheets."/>
+    <parameter name="timesheetDate" description="The date of the timesheet."/>
     <parameter name="timeIn1" description="The time entered as in."/>
     <parameter name="timeOut1" description="The time entered as out."/>
     <parameter name="timeIn2" description="The time entered as in."/>

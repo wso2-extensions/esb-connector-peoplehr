@@ -19,28 +19,28 @@
 <template name="updateEmployee" xmlns="http://ws.apache.org/ns/synapse">
     <parameter name="employeeId" description="The ID of the employee."/>
     <parameter name="reasonForChange" description="The reason for updating the employee details."/>
-    <parameter name="title" description="The title of the employees."/>
-    <parameter name="firstName" description="The first name of the employees."/>
-    <parameter name="lastName" description="The last name of the employees."/>
-    <parameter name="email" description="The email address of the employees."/>
-    <parameter name="gender" description="The gender of the employees."/>
-    <parameter name="startDate" description="The joining date of the employees."/>
+    <parameter name="title" description="The title of the employee."/>
+    <parameter name="firstName" description="The first name of the employee."/>
+    <parameter name="lastName" description="The last name of the employee."/>
+    <parameter name="email" description="The email address of the employee."/>
+    <parameter name="gender" description="The gender of the employee."/>
+    <parameter name="startDate" description="The joining date of the employee."/>
     <parameter name="dateOfBirth" description="The date of birth."/>
     <parameter name="jobRole" description="The job role in the company."/>
-    <parameter name="location" description="The work location of the employees."/>
+    <parameter name="location" description="The work location of the employee."/>
     <parameter name="department" description="The department the employee is working."/>
     <parameter name="reportsTo" description="The person who the employee should reports to."/>
     <parameter name="nationalInsuranceNumber"
-               description="The national insurance number of the employees."/>
-    <parameter name="nationality" description="The nationality of the employees."/>
-    <parameter name="employmentType" description="The employment type of the employees."/>
+               description="The national insurance number of the employee."/>
+    <parameter name="nationality" description="The nationality of the employee."/>
+    <parameter name="employmentType" description="The employment type of the employee."/>
     <parameter name="entitlementThisYear"
                description="The flag containing whether the employee is entitled this year."/>
     <parameter name="entitlementNextYear"
                description="The flag containing whether the employee is entitled next year."/>
-    <parameter name="address" description="The address of the employees."/>
+    <parameter name="address" description="The address of the employee."/>
     <parameter name="personalPhoneNumber"
-               description="The personal phone number of the employees."/>
+               description="The personal phone number of the employee."/>
     <parameter name="apiColumn1" description="A custom api column for custom data."/>
     <parameter name="apiColumn2" description="A custom api column for custom data."/>
     <parameter name="apiColumn3" description="A custom api column for custom data."/>

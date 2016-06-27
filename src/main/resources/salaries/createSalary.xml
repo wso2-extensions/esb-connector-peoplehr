@@ -18,14 +18,14 @@
 -->
 <template name="createSalary" xmlns="http://ws.apache.org/ns/synapse">
     <parameter name="effectiveFrom" description="Date from when the salary will be effective."/>
-    <parameter name="salaryType" description="Type of the salaries."/>
+    <parameter name="salaryType" description="Type of the salary."/>
     <parameter name="paymentFrequency" description="How frequently the payment will be given"/>
-    <parameter name="salaryAmount" description="Amount of the salaries."/>
+    <parameter name="salaryAmount" description="Amount of the salary."/>
     <parameter name="currencyCode" description="The relevent currency code."/>
     <parameter name="changeReason" description="The reason why the salary is being changed."/>
     <parameter name="comments" description="Any additional comments can go here."/>
-    <parameter name="deductions" description="Details about the deductions from the salaries."/>
-    <parameter name="entitlements" description="Details about the entitlements to the salaries."/>
+    <parameter name="deductions" description="Details about the deductions from the salary."/>
+    <parameter name="entitlements" description="Details about the entitlements to the salary."/>
     <parameter name="employeeId" description="The ID of the employee."/>
     <sequence>
         <property name="uri.var.effectiveFrom" expression="$func:effectiveFrom"/>
