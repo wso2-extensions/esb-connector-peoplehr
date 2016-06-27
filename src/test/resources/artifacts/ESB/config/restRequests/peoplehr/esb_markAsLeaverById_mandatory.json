@@ -1,0 +1,12 @@
+{
+  "apiUrl": "%s(apiUrl)",
+  "apiKey": "%s(apiKey)",
+  "employeeId": "%s(newEmployeeId)",
+  "reasonForLeaving":"Got another job",
+  "finalEmploymentDate":"%s(finalEmploymentDate)",
+  "finalWorkingDate":"%s(finalWorkingDate)",
+  "markAsLeaverImmediately":"true",
+  "additionalComments":"I will rejoin if possible",
+  "reEmployable":"YES",
+  "supportingComments":"Approved by HR"
+}

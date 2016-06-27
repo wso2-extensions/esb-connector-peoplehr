@@ -73,7 +73,77 @@
             <property name="timeOut5" expression="json-eval($.timeOut5)"/>
             <property name="oldStartDate" expression="json-eval($.oldStartDate)"/>
             <property name="oldEndDate" expression="json-eval($.oldEndDate)"/>
+            <property name="jobRoleEffectiveDate" expression="json-eval($.jobRoleEffectiveDate)"/>
+            <property name="company" expression="json-eval($.company)"/>
+            <property name="payrollCompany" expression="json-eval($.payrollCompany)"/>
+            <property name="payrollId" expression="json-eval($.payrollId)"/>
+            <property name="rotaId" expression="json-eval($.rotaId)"/>
+            <property name="crmId" expression="json-eval($.crmId)"/>
+            <property name="atsId" expression="json-eval($.atsId)"/>
+            <property name="performanceId" expression="json-eval($.performanceId)"/>
+            <property name="benefitsId" expression="json-eval($.benefitsId)"/>
+            <property name="system1Id" expression="json-eval($.system1Id)"/>
+            <property name="system2Id" expression="json-eval($.system2Id)"/>
+            <property name="system3Id" expression="json-eval($.system3Id)"/>
+            <property name="personalEmail" expression="json-eval($.personalEmail)"/>
+            <property name="methodOfRecruitment" expression="json-eval($.methodOfRecruitment)"/>
+            <property name="nationalInsuranceNumber"
+                      expression="json-eval($.nationalInsuranceNumber)"/>
+            <property name="nationality" expression="json-eval($.nationality)"/>
+            <property name="employmentType" expression="json-eval($.employmentType)"/>
+            <property name="entitlementThisYear"
+                      expression="json-eval($.entitlementThisYear)"/>
+            <property name="entitlementNextYear"
+                      expression="json-eval($.entitlementNextYear)"/>
+            <property name="address" expression="json-eval($.address)"/>
+            <property name="personalPhoneNumber"
+                      expression="json-eval($.personalPhoneNumber)"/>
+            <property name="apiColumn1" expression="json-eval($.apiColumn1)"/>
+            <property name="apiColumn2" expression="json-eval($.apiColumn2)"/>
+            <property name="apiColumn3" expression="json-eval($.apiColumn3)"/>
+            <property name="apiColumn4" expression="json-eval($.apiColumn4)"/>
+            <property name="apiColumn5" expression="json-eval($.apiColumn5)"/>
+            <property name="reportsTo" expression="json-eval($.reportsTo)"/>
+            <property name="reportsToEffectiveDate"
+                      expression="json-eval($.reportsToEffectiveDate)"/>
+            <property name="locationEffectiveDate"
+                      expression="json-eval($.locationEffectiveDate)"/>
+            <property name="departmentEffectiveDate"
+                      expression="json-eval($.departmentEffectiveDate)"/>
+            <property name="employmentTypeEffectiveDate"
+                      expression="json-eval($.employmentTypeEffectiveDate)"/>
+            <property name="companyEffectiveDate"
+                      expression="json-eval($.companyEffectiveDate)"/>
+            <property name="includeLeavers" expression="json-eval($.includeLeavers)"/>
+            <property name="newEmployeeId" expression="json-eval($.newEmployeeId)"/>
+            <property name="oldEmployeeId" expression="json-eval($.oldEmployeeId)"/>
+            <property name="additionalComments" expression="json-eval($.additionalComments)"/>
+            <property name="reasonForLeaving" expression="json-eval($.reasonForLeaving)"/>
+            <property name="finalEmploymentDate" expression="json-eval($.finalEmploymentDate)"/>
+            <property name="finalWorkingDate" expression="json-eval($.finalWorkingDate)"/>
+            <property name="reEmployable" expression="json-eval($.reEmployable)"/>
+            <property name="markAsLeaverImmediately" expression="json-eval($.markAsLeaverImmediately)"/>
+            <property name="supportingComments" expression="json-eval($.supportingComments)"/>
+            <property name="startTime" expression="json-eval($.startTime)"/>
+            <property name="endTime" expression="json-eval($.endTime)"/>
             <property name="queryName" expression="json-eval($.queryName)"/>
+            <property name="fieldName" expression="json-eval($.fieldName)"/>
+            <property name="durationInDays" expression="json-eval($.durationInDays)"/>
+            <property name="durationInMinutes" expression="json-eval($.durationInMinutes)"/>
+            <property name="durationType" expression="json-eval($.durationType)"/>
+            <property name="partOfDay" expression="json-eval($.partOfDay)"/>
+            <property name="entitlementThisYear" expression="json-eval($.entitlementThisYear)"/>
+            <property name="entitlementNextYear" expression="json-eval($.entitlementNextYear)"/>
+            <property name="documentId" expression="json-eval($.documentId)"/>
+
+            <property name="category" expression="json-eval($.category)"/>
+            <property name="employeeAccess" expression="json-eval($.employeeAccess)"/>
+            <property name="documentName" expression="json-eval($.documentName)"/>
+            <property name="file" expression="json-eval($.file)"/>
+            <property name="managerAccess" expression="json-eval($.managerAccess)"/>
+            <property name="signatureRequiredle" expression="json-eval($.signatureRequired)"/>
+            <property name="description" expression="json-eval($.description)"/>
+            <property name="transactionId" expression="json-eval($.transactionId)"/>
             <peoplehr.init>
                 <employeeId>{$ctx:employeeId}</employeeId>
                 <apiUrl>{$ctx:apiUrl}</apiUrl>
@@ -87,15 +157,48 @@
                         <startDate>{$ctx:startDate}</startDate>
                         <jobRole>{$ctx:jobRole}</jobRole>
                         <location>{$ctx:location}</location>
+                        <entitlementNextYear>{$ctx:entitlementNextYear}</entitlementNextYear>
                         <department>{$ctx:department}</department>
+                        <personalPhoneNumber>{$ctx:personalPhoneNumber}</personalPhoneNumber>
+                        <employmentType>{$ctx:employmentType}</employmentType>
                         <title>{$ctx:title}</title>
+                        <nationality>{$ctx:nationality}</nationality>
+                        <address>{$ctx:address}</address>
                         <email>{$ctx:email}</email>
                         <gender>{$ctx:gender}</gender>
+                        <apiColumn5>{$ctx:apiColumn5}</apiColumn5>
+                        <reportsTo>{$ctx:reportsTo}</reportsTo>
+                        <apiColumn4>{$ctx:apiColumn4}</apiColumn4>
+                        <apiColumn3>{$ctx:apiColumn3}</apiColumn3>
                         <firstName>{$ctx:firstName}</firstName>
+                        <apiColumn2>{$ctx:apiColumn2}</apiColumn2>
+                        <entitlementThisYear>{$ctx:entitlementThisYear}</entitlementThisYear>
+                        <nationalInsuranceNumber>{$ctx:nationalInsuranceNumber}</nationalInsuranceNumber>
+                        <apiColumn1>{$ctx:apiColumn1}</apiColumn1>
+                        <jobRoleEffectiveDate>{$ctx:jobRoleEffectiveDate}</jobRoleEffectiveDate>
+                        <company>{$ctx:company}</company>
+                        <payrollCompany>{$ctx:payrollCompany}</payrollCompany>
+                        <payrollId>{$ctx:payrollId}</payrollId>
+                        <rotaId>{$ctx:rotaId}</rotaId>
+                        <crmId>{$ctx:crmId}</crmId>
+                        <atsId>{$ctx:atsId}</atsId>
+                        <performanceId>{$ctx:performanceId}</performanceId>
+                        <benefitsId>{$ctx:benefitsId}</benefitsId>
+                        <system1Id>{$ctx:system1Id}</system1Id>
+                        <system2Id>{$ctx:system2Id}</system2Id>
+                        <system3Id>{$ctx:system3Id}</system3Id>
+                        <personalEmail>{$ctx:personalEmail}</personalEmail>
+                        <methodOfRecruitment>{$ctx:methodOfRecruitment}</methodOfRecruitment>
                     </peoplehr.createEmployee>
                 </case>
                 <case regex="urn:updateEmployee">
                     <peoplehr.updateEmployee>
+                        <jobRoleEffectiveDate>{$ctx:jobRoleEffectiveDate}</jobRoleEffectiveDate>
+                        <reportsToEffectiveDate>{$ctx:reportsToEffectiveDate}</reportsToEffectiveDate>
+                        <locationEffectiveDate>{$ctx:locationEffectiveDate}</locationEffectiveDate>
+                        <departmentEffectiveDate>{$ctx:departmentEffectiveDate}</departmentEffectiveDate>
+                        <employmentTypeEffectiveDate>{$ctx:employmentTypeEffectiveDate}</employmentTypeEffectiveDate>
+                        <reasonForChange>{$ctx:reasonForChange}</reasonForChange>
                         <dateOfBirth>{$ctx:dateOfBirth}</dateOfBirth>
                         <lastName>{$ctx:lastName}</lastName>
                         <startDate>{$ctx:startDate}</startDate>
@@ -108,7 +211,6 @@
                         <title>{$ctx:title}</title>
                         <nationality>{$ctx:nationality}</nationality>
                         <address>{$ctx:address}</address>
-                        <reasonForChange>{$ctx:reasonForChange}</reasonForChange>
                         <email>{$ctx:email}</email>
                         <gender>{$ctx:gender}</gender>
                         <apiColumn5>{$ctx:apiColumn5}</apiColumn5>
@@ -120,10 +222,48 @@
                         <entitlementThisYear>{$ctx:entitlementThisYear}</entitlementThisYear>
                         <nationalInsuranceNumber>{$ctx:nationalInsuranceNumber}</nationalInsuranceNumber>
                         <apiColumn1>{$ctx:apiColumn1}</apiColumn1>
+                        <company>{$ctx:company}</company>
+                        <payrollCompany>{$ctx:payrollCompany}</payrollCompany>
+                        <payrollId>{$ctx:payrollId}</payrollId>
+                        <rotaId>{$ctx:rotaId}</rotaId>
+                        <crmId>{$ctx:crmId}</crmId>
+                        <atsId>{$ctx:atsId}</atsId>
+                        <performanceId>{$ctx:performanceId}</performanceId>
+                        <benefitsId>{$ctx:benefitsId}</benefitsId>
+                        <system1Id>{$ctx:system1Id}</system1Id>
+                        <system2Id>{$ctx:system2Id}</system2Id>
+                        <system3Id>{$ctx:system3Id}</system3Id>
+                        <personalEmail>{$ctx:personalEmail}</personalEmail>
+                        <methodOfRecruitment>{$ctx:methodOfRecruitment}</methodOfRecruitment>
+                        <companyEffectiveDate>{$ctx:companyEffectiveDate}</companyEffectiveDate>
                     </peoplehr.updateEmployee>
                 </case>
-                <case regex="urn:getEmployee">
-                    <peoplehr.getEmployee/>
+                <case regex="urn:getEmployeeDetailById">
+                    <peoplehr.getEmployeeDetailById/>
+                </case>
+                <case regex="urn:getAllEmployeeDetail">
+                    <peoplehr.getAllEmployeeDetail>
+                        <includeLeavers>{$ctx:includeLeavers}</includeLeavers>
+                    </peoplehr.getAllEmployeeDetail>
+                </case>
+                <case regex="urn:updateEmployeeId">
+                    <peoplehr.updateEmployeeId>
+                        <reasonForChange>{$ctx:reasonForChange}</reasonForChange>
+                        <oldEmployeeId>{$ctx:oldEmployeeId}</oldEmployeeId>
+                        <newEmployeeId>{$ctx:newEmployeeId}</newEmployeeId>
+                    </peoplehr.updateEmployeeId>
+                </case>
+                <case regex="urn:markAsLeaverById">
+                    <peoplehr.markAsLeaverById>
+                        <reasonForLeaving>{$ctx:reasonForLeaving}</reasonForLeaving>
+                        <additionalComments>{$ctx:additionalComments}</additionalComments>
+                        <finalEmploymentDate>{$ctx:finalEmploymentDate}</finalEmploymentDate>
+                        <finalWorkingDate>{$ctx:finalWorkingDate}</finalWorkingDate>
+                        <markAsLeaverImmediately>{$ctx:markAsLeaverImmediately}</markAsLeaverImmediately>
+                        <reportsTo>{$ctx:reportsTo}</reportsTo>
+                        <reEmployable>{$ctx:reEmployable}</reEmployable>
+                        <supportingComments>{$ctx:supportingComments}</supportingComments>
+                    </peoplehr.markAsLeaverById>
                 </case>
                 <case regex="urn:createTimesheet">
                     <peoplehr.createTimesheet>
@@ -163,6 +303,11 @@
                         <timeIn5>{$ctx:timeIn5}</timeIn5>
                     </peoplehr.updateTimesheet>
                 </case>
+                <case regex="urn:deleteTimesheet">
+                    <peoplehr.deleteTimesheet>
+                        <timesheetDate>{$ctx:timesheetDate}</timesheetDate>
+                    </peoplehr.deleteTimesheet>
+                </case>
                 <case regex="urn:createSalary">
                     <peoplehr.createSalary>
                         <salaryAmount>{$ctx:salaryAmount}</salaryAmount>
@@ -179,8 +324,14 @@
                         <isIncludeHistory>{$ctx:isIncludeHistory}</isIncludeHistory>
                     </peoplehr.getSalary>
                 </case>
+                <case regex="urn:deleteSalary">
+                    <peoplehr.deleteSalary>
+                        <effectiveFrom>{$ctx:effectiveFrom}</effectiveFrom>
+                    </peoplehr.deleteSalary>
+                </case>
                 <case regex="urn:createProjectTimesheet">
                     <peoplehr.createProjectTimesheet>
+                        <startTime>{$ctx:startTime}</startTime>
                         <timesheetProject>{$ctx:timesheetProject}</timesheetProject>
                         <timesheetDetail>{$ctx:timesheetDetail}</timesheetDetail>
                         <projectTimesheetDate>{$ctx:projectTimesheetDate}</projectTimesheetDate>
@@ -188,6 +339,7 @@
                         <timesheetTask>{$ctx:timesheetTask}</timesheetTask>
                         <notes>{$ctx:notes}</notes>
                         <totalHours>{$ctx:totalHours}</totalHours>
+                        <endTime>{$ctx:endTime}</endTime>
                     </peoplehr.createProjectTimesheet>
                 </case>
                 <case regex="urn:getProjectTimesheet">
@@ -198,6 +350,8 @@
                 </case>
                 <case regex="urn:updateProjectTimesheet">
                     <peoplehr.updateProjectTimesheet>
+                        <startTime>{$ctx:startTime}</startTime>
+                        <endTime>{$ctx:endTime}</endTime>
                         <timesheetProject>{$ctx:timesheetProject}</timesheetProject>
                         <transactionId>{$ctx:transactionId}</transactionId>
                         <timesheetDetail>{$ctx:timesheetDetail}</timesheetDetail>
@@ -206,6 +360,11 @@
                         <notes>{$ctx:notes}</notes>
                         <totalHours>{$ctx:totalHours}</totalHours>
                     </peoplehr.updateProjectTimesheet>
+                </case>
+                <case regex="urn:deleteProjectTimesheet">
+                    <peoplehr.deleteProjectTimesheet>
+                        <transactionId>{$ctx:transactionId}</transactionId>
+                    </peoplehr.deleteProjectTimesheet>
                 </case>
                 <case regex="urn:createAbsenceRecord">
                     <peoplehr.createAbsenceRecord>
@@ -243,10 +402,97 @@
                         <partOfDay>{$ctx:partOfDay}</partOfDay>
                     </peoplehr.updateAbsenceRecord>
                 </case>
+                <case regex="urn:deleteAbsence">
+                    <peoplehr.deleteAbsence>
+                        <startDate>{$ctx:startDate}</startDate>
+                        <endDate>{$ctx:endDate}</endDate>
+                    </peoplehr.deleteAbsence>
+                </case>
                 <case regex="urn:query">
                     <peoplehr.query>
                         <queryName>{$ctx:queryName}</queryName>
                     </peoplehr.query>
+                </case>
+                <case regex="urn:getHistoryByEmployeeIdAndFieldName">
+                    <peoplehr.getHistoryByEmployeeIdAndFieldName>
+                        <fieldName>{$ctx:fieldName}</fieldName>
+                    </peoplehr.getHistoryByEmployeeIdAndFieldName>
+                </case>
+                <case regex="urn:createHoliday">
+                    <peoplehr.createHoliday>
+                        <durationType>{$ctx:durationType}</durationType>
+                        <startDate>{$ctx:startDate}</startDate>
+                        <endDate>{$ctx:endDate}</endDate>
+                        <durationInDays>{$ctx:durationInDays}</durationInDays>
+                        <durationInMinutes>{$ctx:durationInMinutes}</durationInMinutes>
+                        <partOfDay>{$ctx:partOfDay}</partOfDay>
+                        <comments>{$ctx:comments}</comments>
+                    </peoplehr.createHoliday>
+                </case>
+                <case regex="urn:getHolidayDetail">
+                    <peoplehr.getHolidayDetail>
+                        <startDate>{$ctx:startDate}</startDate>
+                        <endDate>{$ctx:endDate}</endDate>
+                    </peoplehr.getHolidayDetail>
+                </case>
+                <case regex="urn:updateHoliday">
+                    <peoplehr.updateHoliday>
+                        <durationType>{$ctx:durationType}</durationType>
+                        <startDate>{$ctx:startDate}</startDate>
+                        <endDate>{$ctx:endDate}</endDate>
+                        <durationInDays>{$ctx:durationInDays}</durationInDays>
+                        <durationInMinutes>{$ctx:durationInMinutes}</durationInMinutes>
+                        <partOfDay>{$ctx:partOfDay}</partOfDay>
+                        <comments>{$ctx:comments}</comments>
+                        <oldStartDate>{$ctx:oldStartDate}</oldStartDate>
+                        <oldEndDate>{$ctx:oldEndDate}</oldEndDate>
+                    </peoplehr.updateHoliday>
+                </case>
+                <case regex="urn:deleteHoliday">
+                    <peoplehr.deleteHoliday>
+                        <startDate>{$ctx:startDate}</startDate>
+                        <endDate>{$ctx:endDate}</endDate>
+                    </peoplehr.deleteHoliday>
+                </case>
+                <case regex="urn:getHolidayEntitlement">
+                    <peoplehr.getHolidayEntitlement>
+                        <startDate>{$ctx:startDate}</startDate>
+                        <endDate>{$ctx:endDate}</endDate>
+                    </peoplehr.getHolidayEntitlement>
+                </case>
+                <case regex="urn:getNextYearHolidayEntitlement">
+                    <peoplehr.getNextYearHolidayEntitlement/>
+                </case>
+                <case regex="urn:updateHolidayEntitlement">
+                    <peoplehr.updateHolidayEntitlement>
+                        <entitlementThisYear>{$ctx:entitlementThisYear}</entitlementThisYear>
+                        <reasonForChange>{$ctx:reasonForChange}</reasonForChange>
+                    </peoplehr.updateHolidayEntitlement>
+                </case>
+                <case regex="urn:updateNextYearHolidayEntitlement">
+                    <peoplehr.updateNextYearHolidayEntitlement>
+                        <entitlementNextYear>{$ctx:entitlementNextYear}</entitlementNextYear>
+                        <reasonForChange>{$ctx:reasonForChange}</reasonForChange>
+                    </peoplehr.updateNextYearHolidayEntitlement>
+                </case>
+                <case regex="urn:getAllDocument">
+                    <peoplehr.getAllDocument/>
+                </case>
+                <case regex="urn:getDocumentById">
+                    <peoplehr.getDocumentById>
+                        <documentId>{$ctx:documentId}</documentId>
+                    </peoplehr.getDocumentById>
+                </case>
+                <case regex="urn:uploadEmployeeDocument">
+                    <peoplehr.uploadEmployeeDocument>
+                        <category>{$ctx:category}</category>
+                        <employeeAccess>{$ctx:employeeAccess}</employeeAccess>
+                        <documentName>{$ctx:documentName}</documentName>
+                        <file>{$ctx:file}</file>
+                        <managerAccess>{$ctx:managerAccess}</managerAccess>
+                        <signatureRequired>{$ctx:signatureRequired}</signatureRequired>
+                        <description>{$ctx:description}</description>
+                    </peoplehr.uploadEmployeeDocument>
                 </case>
             </switch>
             <respond/>

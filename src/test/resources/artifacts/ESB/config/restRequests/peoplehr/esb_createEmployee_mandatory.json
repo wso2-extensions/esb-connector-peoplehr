@@ -1,12 +1,12 @@
 {
-  "apiUrl": "%s(apiUrl)",
-  "apiKey": "%s(apiKey)",
-  "employeeId": "%s(empIdMandatory)",
-  "firstName": "%s(firstName)",
-  "lastName": "%s(lastName)",
-  "gender": "Male",
-  "startDate": "%s(startDate)",
-  "jobRole": "%s(jobRole)",
-  "location": "Colombo",
-  "department": "%s(department)"
+  "apiUrl":"%s(apiUrl)",
+  "apiKey":"%s(apiKey)",
+  "employeeId":"%s(empIdMandatory)",
+  "firstName":"%s(firstName)",
+  "lastName":"%s(lastName)",
+  "startDate":"%s(startDate)",
+  "jobRole":"%s(jobRole)",
+  "location":"%s(location)",
+  "department":"%s(department)",
+  "jobRoleEffectiveDate":"%s(jobRoleEffectiveDate)"
 }

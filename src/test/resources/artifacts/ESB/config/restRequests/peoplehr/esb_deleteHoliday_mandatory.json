@@ -1,0 +1,7 @@
+{
+  "apiUrl":"%s(apiUrl)",
+  "apiKey":"%s(apiKey)",
+  "employeeId":"%s(empIdOptional)",
+  "startDate":"%s(updatedDate)",
+  "endDate":"%s(updatedDate)"
+}

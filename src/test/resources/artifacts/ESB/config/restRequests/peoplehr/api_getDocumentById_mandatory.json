@@ -1,0 +1,6 @@
+{
+  "APIKey": "%s(apiKey)",
+  "Action": "GetDocumentById",
+  "EmployeeId": "%s(empIdMandatory)",
+  "DocumentId": "%s(documentId)"
+}

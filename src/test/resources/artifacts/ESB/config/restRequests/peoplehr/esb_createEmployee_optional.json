@@ -4,12 +4,20 @@
   "employeeId": "%s(empIdOptional)",
   "firstName": "%s(firstName)",
   "lastName": "%s(lastName)",
-  "gender": "Male",
+  "gender": "%s(gender)",
   "startDate": "%s(startDate)",
   "jobRole": "%s(jobRole)",
-  "location": "Colombo",
+  "location": "%s(location)",
   "department": "%s(department)",
-  "title": "Mr.",
-  "email": "%s(empEmail)",
-  "dateOfBirth": "%s(empDateOfBirth)"
+  "title": "%s(title)",
+  "email": "%s(empEmailOptional)",
+  "dateOfBirth": "%s(empDateOfBirth)",
+  "jobRoleEffectiveDate":"%s(jobRoleEffectiveDate)",
+  "company":"%s(company)",
+  "methodOfRecruitment":"%s(methodOfRecruitment)",
+  "address":"%s(address)",
+  "employmentType":"%s(employmentType)",
+  "personalPhoneNumber":"%s(personalPhoneNumber)",
+  "reportsTo":"%s(reportsTo)"
 }
+

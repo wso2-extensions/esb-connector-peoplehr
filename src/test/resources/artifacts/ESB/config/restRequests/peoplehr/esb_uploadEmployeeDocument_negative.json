@@ -1,0 +1,9 @@
+{
+  "apiUrl": "%s(apiUrl)",
+  "apiKey": "%s(apiKey)",
+  "employeeId": "",
+  "category": "Details",
+  "employeeAccess": "true",
+  "documentName": "%s(documentName)",
+  "file": "%s(file)"
+}
