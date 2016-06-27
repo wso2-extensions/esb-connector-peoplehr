@@ -43,7 +43,7 @@ public class PeoplehrConnectorIntegrationTest extends ConnectorIntegrationTestBa
 	@BeforeClass(alwaysRun = true)
 	public void setEnvironment() throws Exception {
 
-		init("peoplehr-connector-1.0.2");
+		init("peoplehr-connector-1.0.3-SNAPSHOT");
 
 		esbRequestHeadersMap.put("Accept-Charset", "UTF-8");
 		esbRequestHeadersMap.put("Content-Type", "application/json");
