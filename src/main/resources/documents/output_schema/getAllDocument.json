@@ -1,0 +1,72 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "isError": {
+      "id": "http:\/\/wso2jsonschema.org\/isError",
+      "type": "boolean"
+    },
+    "Status": {
+      "id": "http:\/\/wso2jsonschema.org\/Status",
+      "type": "number"
+    },
+    "Message": {
+      "id": "http:\/\/wso2jsonschema.org\/Message",
+      "type": "string"
+    },
+    "Result": {
+      "id": "http:\/\/wso2jsonschema.org\/Result",
+      "type": "array",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/0",
+          "type": "object",
+          "properties": {
+            "EmployeeId": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/EmployeeId",
+              "type": "number"
+            },
+            "DocumentId": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/DocumentId",
+              "type": "number"
+            },
+            "DocumentName": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/DocumentName",
+              "type": "string"
+            },
+            "URL": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/URL",
+              "type": "string"
+            },
+            "Comments": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/Comments",
+              "type": "string"
+            },
+            "EmployeeAccess": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/EmployeeAccess",
+              "type": "string"
+            },
+            "ManagerAccess": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/ManagerAccess",
+              "type": "string"
+            },
+            "SignRequired": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/SignRequired",
+              "type": "string"
+            },
+            "Category": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/Category",
+              "type": "string"
+            },
+            "AddedOn": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/AddedOn",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object"
+}

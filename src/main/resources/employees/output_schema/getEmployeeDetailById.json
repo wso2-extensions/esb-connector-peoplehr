@@ -1,0 +1,1034 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "isError": {
+      "id": "http:\/\/wso2jsonschema.org\/isError",
+      "type": "boolean"
+    },
+    "Status": {
+      "id": "http:\/\/wso2jsonschema.org\/Status",
+      "type": "number"
+    },
+    "Message": {
+      "id": "http:\/\/wso2jsonschema.org\/Message",
+      "type": "string"
+    },
+    "Result": {
+      "id": "http:\/\/wso2jsonschema.org\/Result",
+      "type": "object",
+      "properties": {
+        "EmployeeId": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/EmployeeId",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmployeeId\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "Title": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/Title",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/Title\/DisplayValue",
+              "type": "null"
+            }
+          }
+        },
+        "FirstName": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/FirstName",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/FirstName\/DisplayValue",
+              "type": "string"
+            },
+            "FieldHistory": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/FirstName\/FieldHistory",
+              "type": "array",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/FirstName\/FieldHistory\/0",
+                  "type": "object",
+                  "properties": {
+                    "OldValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/FirstName\/FieldHistory\/0\/OldValue",
+                      "type": "string"
+                    },
+                    "NewValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/FirstName\/FieldHistory\/0\/NewValue",
+                      "type": "string"
+                    },
+                    "ChangedOn": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/FirstName\/FieldHistory\/0\/ChangedOn",
+                      "type": "string"
+                    },
+                    "ReasonForChange": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/FirstName\/FieldHistory\/0\/ReasonForChange",
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "LastName": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/LastName",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/LastName\/DisplayValue",
+              "type": "string"
+            },
+            "FieldHistory": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/LastName\/FieldHistory",
+              "type": "array",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/LastName\/FieldHistory\/0",
+                  "type": "object",
+                  "properties": {
+                    "OldValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/LastName\/FieldHistory\/0\/OldValue",
+                      "type": "string"
+                    },
+                    "NewValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/LastName\/FieldHistory\/0\/NewValue",
+                      "type": "string"
+                    },
+                    "ChangedOn": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/LastName\/FieldHistory\/0\/ChangedOn",
+                      "type": "string"
+                    },
+                    "ReasonForChange": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/LastName\/FieldHistory\/0\/ReasonForChange",
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "OtherName": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/OtherName",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/OtherName\/DisplayValue",
+              "type": "null"
+            }
+          }
+        },
+        "KnownAs": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/KnownAs",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/KnownAs\/DisplayValue",
+              "type": "null"
+            }
+          }
+        },
+        "EmailId": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/EmailId",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmailId\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "StartDate": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/StartDate",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/StartDate\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "DateOfBirth": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/DateOfBirth",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/DateOfBirth\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "JobRole": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/JobRole",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/JobRole\/DisplayValue",
+              "type": "string"
+            },
+            "FieldHistoryForJobRole": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/JobRole\/FieldHistoryForJobRole",
+              "type": "array",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/JobRole\/FieldHistoryForJobRole\/0",
+                  "type": "object",
+                  "properties": {
+                    "JobRole": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/JobRole\/FieldHistoryForJobRole\/0\/JobRole",
+                      "type": "string"
+                    },
+                    "EffectiveDate": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/JobRole\/FieldHistoryForJobRole\/0\/EffectiveDate",
+                      "type": "string"
+                    },
+                    "ChangedOn": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/JobRole\/FieldHistoryForJobRole\/0\/ChangedOn",
+                      "type": "string"
+                    },
+                    "ReasonForChange": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/JobRole\/FieldHistoryForJobRole\/0\/ReasonForChange",
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "Company": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/Company",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/Company\/DisplayValue",
+              "type": "string"
+            },
+            "FieldHistoryForEffectiveDate": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/Company\/FieldHistoryForEffectiveDate",
+              "type": "array",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/Company\/FieldHistoryForEffectiveDate\/0",
+                  "type": "object",
+                  "properties": {
+                    "FieldData": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Company\/FieldHistoryForEffectiveDate\/0\/FieldData",
+                      "type": "string"
+                    },
+                    "EffectiveDate": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Company\/FieldHistoryForEffectiveDate\/0\/EffectiveDate",
+                      "type": "string"
+                    },
+                    "ChangedOn": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Company\/FieldHistoryForEffectiveDate\/0\/ChangedOn",
+                      "type": "string"
+                    },
+                    "ReasonForChange": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Company\/FieldHistoryForEffectiveDate\/0\/ReasonForChange",
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "CompanyEffectiveDate": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/CompanyEffectiveDate",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/CompanyEffectiveDate\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "Location": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/Location",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/Location\/DisplayValue",
+              "type": "string"
+            },
+            "FieldHistoryForEffectiveDate": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/Location\/FieldHistoryForEffectiveDate",
+              "type": "array",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/Location\/FieldHistoryForEffectiveDate\/0",
+                  "type": "object",
+                  "properties": {
+                    "FieldData": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Location\/FieldHistoryForEffectiveDate\/0\/FieldData",
+                      "type": "string"
+                    },
+                    "EffectiveDate": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Location\/FieldHistoryForEffectiveDate\/0\/EffectiveDate",
+                      "type": "string"
+                    },
+                    "ChangedOn": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Location\/FieldHistoryForEffectiveDate\/0\/ChangedOn",
+                      "type": "string"
+                    },
+                    "ReasonForChange": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Location\/FieldHistoryForEffectiveDate\/0\/ReasonForChange",
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "LocationEffectiveDate": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/LocationEffectiveDate",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/LocationEffectiveDate\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "Department": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/Department",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/Department\/DisplayValue",
+              "type": "string"
+            },
+            "FieldHistoryForEffectiveDate": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/Department\/FieldHistoryForEffectiveDate",
+              "type": "array",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/Department\/FieldHistoryForEffectiveDate\/0",
+                  "type": "object",
+                  "properties": {
+                    "FieldData": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Department\/FieldHistoryForEffectiveDate\/0\/FieldData",
+                      "type": "string"
+                    },
+                    "EffectiveDate": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Department\/FieldHistoryForEffectiveDate\/0\/EffectiveDate",
+                      "type": "string"
+                    },
+                    "ChangedOn": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Department\/FieldHistoryForEffectiveDate\/0\/ChangedOn",
+                      "type": "string"
+                    },
+                    "ReasonForChange": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/Department\/FieldHistoryForEffectiveDate\/0\/ReasonForChange",
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "DepartmentEffectiveDate": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/DepartmentEffectiveDate",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/DepartmentEffectiveDate\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "JobRoleChangeDate": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/JobRoleChangeDate",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/JobRoleChangeDate\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "ReportsTo": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/ReportsTo",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/ReportsTo\/DisplayValue",
+              "type": "null"
+            }
+          }
+        },
+        "ReportsToEffectiveDate": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/ReportsToEffectiveDate",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/ReportsToEffectiveDate\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "ReportsToEmployeeId": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/ReportsToEmployeeId",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/ReportsToEmployeeId\/DisplayValue",
+              "type": "null"
+            }
+          }
+        },
+        "ReportsToEmailAddress": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/ReportsToEmailAddress",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/ReportsToEmailAddress\/DisplayValue",
+              "type": "null"
+            }
+          }
+        },
+        "NISNumber": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/NISNumber",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/NISNumber\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "Nationality": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/Nationality",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/Nationality\/DisplayValue",
+              "type": "null"
+            }
+          }
+        },
+        "EmploymentType": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentType",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentType\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "EmploymentTypeEffectiveDate": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentTypeEffectiveDate",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentTypeEffectiveDate\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "EmployeeStatus": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/EmployeeStatus",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmployeeStatus\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "HolidayAllowanceDays": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/HolidayAllowanceDays",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/HolidayAllowanceDays\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "HolidayAllowanceMins": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/HolidayAllowanceMins",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/HolidayAllowanceMins\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "NoticePeriod": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/NoticePeriod",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/NoticePeriod\/DisplayValue",
+              "type": "null"
+            }
+          }
+        },
+        "ProbationEndDate": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/ProbationEndDate",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/ProbationEndDate\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "Gender": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/Gender",
+          "type": "object",
+          "properties": {
+            "DisplayValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/Gender\/DisplayValue",
+              "type": "string"
+            }
+          }
+        },
+        "ContactDetail": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/ContactDetail",
+          "type": "object",
+          "properties": {
+            "Address": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/ContactDetail\/Address",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/ContactDetail\/Address\/DisplayValue",
+                  "type": "string"
+                }
+              }
+            },
+            "WorkPhoneNumber": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/ContactDetail\/WorkPhoneNumber",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/ContactDetail\/WorkPhoneNumber\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "PersonalPhoneNumber": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/ContactDetail\/PersonalPhoneNumber",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/ContactDetail\/PersonalPhoneNumber\/DisplayValue",
+                  "type": "string"
+                }
+              }
+            },
+            "PersonalEmail": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/ContactDetail\/PersonalEmail",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/ContactDetail\/PersonalEmail\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "Mobile": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/ContactDetail\/Mobile",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/ContactDetail\/Mobile\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            }
+          }
+        },
+        "OtherContact": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact",
+          "type": "array",
+          "items": [
+            {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0",
+              "type": "object",
+              "properties": {
+                "OtherContactName": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/OtherContactName",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/OtherContactName\/DisplayValue",
+                      "type": "string"
+                    }
+                  }
+                },
+                "Relationship": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/Relationship",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/Relationship\/DisplayValue",
+                      "type": "string"
+                    }
+                  }
+                },
+                "OtheContactAddress": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/OtheContactAddress",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/OtheContactAddress\/DisplayValue",
+                      "type": "string"
+                    }
+                  }
+                },
+                "Telephone": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/Telephone",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/Telephone\/DisplayValue",
+                      "type": "string"
+                    }
+                  }
+                },
+                "Mobile": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/Mobile",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/Mobile\/DisplayValue",
+                      "type": "string"
+                    }
+                  }
+                },
+                "Comments": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/Comments",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/OtherContact\/0\/Comments\/DisplayValue",
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "RightToWork": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork",
+          "type": "array",
+          "items": [
+            {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0",
+              "type": "object",
+              "properties": {
+                "DocumentType": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/DocumentType",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/DocumentType\/DisplayValue",
+                      "type": "string"
+                    }
+                  }
+                },
+                "DocumentId": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/DocumentId",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/DocumentId\/DisplayValue",
+                      "type": "string"
+                    }
+                  }
+                },
+                "ValidFrom": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/ValidFrom",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/ValidFrom\/DisplayValue",
+                      "type": "string"
+                    }
+                  }
+                },
+                "ValidTo": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/ValidTo",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/ValidTo\/DisplayValue",
+                      "type": "string"
+                    }
+                  }
+                },
+                "Duration": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/Duration",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/Duration\/DisplayValue",
+                      "type": "string"
+                    }
+                  }
+                },
+                "RightToWorkComments": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/RightToWorkComments",
+                  "type": "object",
+                  "properties": {
+                    "DisplayValue": {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/RightToWork\/0\/RightToWorkComments\/DisplayValue",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "BankDetail": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/BankDetail",
+          "type": "object",
+          "properties": {
+            "BankName": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/BankDetail\/BankName",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/BankDetail\/BankName\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "BankAddress": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/BankDetail\/BankAddress",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/BankDetail\/BankAddress\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "BankCode": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/BankDetail\/BankCode",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/BankDetail\/BankCode\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "AccountNumber": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/BankDetail\/AccountNumber",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/BankDetail\/AccountNumber\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "AccountName": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/BankDetail\/AccountName",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/BankDetail\/AccountName\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            }
+          }
+        },
+        "EmploymentDetail": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail",
+          "type": "object",
+          "properties": {
+            "PayrollCompany": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PayrollCompany",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PayrollCompany\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "PayrollID": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PayrollID",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PayrollID\/DisplayValue",
+                  "type": "string"
+                },
+                "FieldHistory": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PayrollID\/FieldHistory",
+                  "type": "array",
+                  "items": [
+                    {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PayrollID\/FieldHistory\/0",
+                      "type": "object",
+                      "properties": {
+                        "OldValue": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PayrollID\/FieldHistory\/0\/OldValue",
+                          "type": "null"
+                        },
+                        "NewValue": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PayrollID\/FieldHistory\/0\/NewValue",
+                          "type": "string"
+                        },
+                        "ChangedOn": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PayrollID\/FieldHistory\/0\/ChangedOn",
+                          "type": "string"
+                        },
+                        "ReasonForChange": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PayrollID\/FieldHistory\/0\/ReasonForChange",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "TimeAndAttendanceID": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/TimeAndAttendanceID",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/TimeAndAttendanceID\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "RotaID": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/RotaID",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/RotaID\/DisplayValue",
+                  "type": "string"
+                },
+                "FieldHistory": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/RotaID\/FieldHistory",
+                  "type": "array",
+                  "items": [
+                    {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/RotaID\/FieldHistory\/0",
+                      "type": "object",
+                      "properties": {
+                        "OldValue": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/RotaID\/FieldHistory\/0\/OldValue",
+                          "type": "null"
+                        },
+                        "NewValue": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/RotaID\/FieldHistory\/0\/NewValue",
+                          "type": "string"
+                        },
+                        "ChangedOn": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/RotaID\/FieldHistory\/0\/ChangedOn",
+                          "type": "string"
+                        },
+                        "ReasonForChange": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/RotaID\/FieldHistory\/0\/ReasonForChange",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "CRMID": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/CRMID",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/CRMID\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "ATSID": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/ATSID",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/ATSID\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "PerformanceID": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PerformanceID",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PerformanceID\/DisplayValue",
+                  "type": "string"
+                },
+                "FieldHistory": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PerformanceID\/FieldHistory",
+                  "type": "array",
+                  "items": [
+                    {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PerformanceID\/FieldHistory\/0",
+                      "type": "object",
+                      "properties": {
+                        "OldValue": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PerformanceID\/FieldHistory\/0\/OldValue",
+                          "type": "null"
+                        },
+                        "NewValue": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PerformanceID\/FieldHistory\/0\/NewValue",
+                          "type": "string"
+                        },
+                        "ChangedOn": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PerformanceID\/FieldHistory\/0\/ChangedOn",
+                          "type": "string"
+                        },
+                        "ReasonForChange": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/PerformanceID\/FieldHistory\/0\/ReasonForChange",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "BenefitsID": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/BenefitsID",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/BenefitsID\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "System1ID": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/System1ID",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/System1ID\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "System2ID": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/System2ID",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/System2ID\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "System3ID": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/System3ID",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/System3ID\/DisplayValue",
+                  "type": "null"
+                }
+              }
+            },
+            "MethodOfRecruitment": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/MethodOfRecruitment",
+              "type": "object",
+              "properties": {
+                "DisplayValue": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/MethodOfRecruitment\/DisplayValue",
+                  "type": "string"
+                },
+                "FieldHistory": {
+                  "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/MethodOfRecruitment\/FieldHistory",
+                  "type": "array",
+                  "items": [
+                    {
+                      "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/MethodOfRecruitment\/FieldHistory\/0",
+                      "type": "object",
+                      "properties": {
+                        "OldValue": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/MethodOfRecruitment\/FieldHistory\/0\/OldValue",
+                          "type": "null"
+                        },
+                        "NewValue": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/MethodOfRecruitment\/FieldHistory\/0\/NewValue",
+                          "type": "string"
+                        },
+                        "ChangedOn": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/MethodOfRecruitment\/FieldHistory\/0\/ChangedOn",
+                          "type": "string"
+                        },
+                        "ReasonForChange": {
+                          "id": "http:\/\/wso2jsonschema.org\/Result\/EmploymentDetail\/MethodOfRecruitment\/FieldHistory\/0\/ReasonForChange",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "LeavingDate": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/LeavingDate",
+          "type": "string"
+        },
+        "ReasonForLeaving": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/ReasonForLeaving",
+          "type": "string"
+        },
+        "EmployeeImage": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/EmployeeImage",
+          "type": "null"
+        },
+        "APIColumn1": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/APIColumn1",
+          "type": "null"
+        },
+        "APIColumn2": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/APIColumn2",
+          "type": "null"
+        },
+        "APIColumn3": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/APIColumn3",
+          "type": "null"
+        },
+        "APIColumn4": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/APIColumn4",
+          "type": "null"
+        },
+        "APIColumn5": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/APIColumn5",
+          "type": "null"
+        },
+        "lstFieldHistoryJobrole": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/lstFieldHistoryJobrole",
+          "type": "null"
+        }
+      }
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "isError": {
+      "id": "http:\/\/wso2jsonschema.org\/isError",
+      "type": "boolean"
+    },
+    "Status": {
+      "id": "http:\/\/wso2jsonschema.org\/Status",
+      "type": "number"
+    },
+    "Message": {
+      "id": "http:\/\/wso2jsonschema.org\/Message",
+      "type": "string"
+    },
+    "Result": {
+      "id": "http:\/\/wso2jsonschema.org\/Result",
+      "type": "array",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/0",
+          "type": "object",
+          "properties": {
+            "TransactionId": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TransactionId",
+              "type": "string"
+            },
+            "ProjectTimesheetDate": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/ProjectTimesheetDate",
+              "type": "string"
+            },
+            "TimesheetProject": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimesheetProject",
+              "type": "string"
+            },
+            "TimesheetTask": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimesheetTask",
+              "type": "string"
+            },
+            "TimesheetDetail": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimesheetDetail",
+              "type": "string"
+            },
+            "StartTime": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/StartTime",
+              "type": "string"
+            },
+            "EndTime": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/EndTime",
+              "type": "string"
+            },
+            "TotalHours": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TotalHours",
+              "type": "string"
+            },
+            "Quantity": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/Quantity",
+              "type": "string"
+            },
+            "Notes": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/Notes",
+              "type": "string"
+            },
+            "ChangedDate": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/ChangedDate",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object"
+}

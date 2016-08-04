@@ -1,0 +1,52 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "isError": {
+      "id": "http:\/\/wso2jsonschema.org\/isError",
+      "type": "boolean"
+    },
+    "Status": {
+      "id": "http:\/\/wso2jsonschema.org\/Status",
+      "type": "number"
+    },
+    "Message": {
+      "id": "http:\/\/wso2jsonschema.org\/Message",
+      "type": "string"
+    },
+    "Result": {
+      "id": "http:\/\/wso2jsonschema.org\/Result",
+      "type": "array",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/0",
+          "type": "object",
+          "properties": {
+            "OldValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/OldValue",
+              "type": "string"
+            },
+            "NewValue": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/NewValue",
+              "type": "string"
+            },
+            "ReasonForChange": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/ReasonForChange",
+              "type": "string"
+            },
+            "ChangedOn": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/ChangedOn",
+              "type": "string"
+            },
+            "CreatedBy": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/CreatedBy",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object"
+}

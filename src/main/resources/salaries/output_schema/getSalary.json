@@ -1,0 +1,64 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "isError": {
+      "id": "http:\/\/wso2jsonschema.org\/isError",
+      "type": "boolean"
+    },
+    "Status": {
+      "id": "http:\/\/wso2jsonschema.org\/Status",
+      "type": "number"
+    },
+    "Message": {
+      "id": "http:\/\/wso2jsonschema.org\/Message",
+      "type": "string"
+    },
+    "Result": {
+      "id": "http:\/\/wso2jsonschema.org\/Result",
+      "type": "array",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/0",
+          "type": "object",
+          "properties": {
+            "EffectiveFrom": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/EffectiveFrom",
+              "type": "string"
+            },
+            "SalaryType": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/SalaryType",
+              "type": "string"
+            },
+            "PaymentFrequency": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/PaymentFrequency",
+              "type": "string"
+            },
+            "SalaryAmount": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/SalaryAmount",
+              "type": "string"
+            },
+            "TotalSalaryAmount": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TotalSalaryAmount",
+              "type": "string"
+            },
+            "Currency": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/Currency",
+              "type": "string"
+            },
+            "ChangeReason": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/ChangeReason",
+              "type": "string"
+            },
+            "Comments": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/Comments",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object"
+}

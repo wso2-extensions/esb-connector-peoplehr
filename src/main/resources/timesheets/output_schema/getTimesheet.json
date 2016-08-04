@@ -1,0 +1,140 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "isError": {
+      "id": "http:\/\/wso2jsonschema.org\/isError",
+      "type": "boolean"
+    },
+    "Status": {
+      "id": "http:\/\/wso2jsonschema.org\/Status",
+      "type": "number"
+    },
+    "Message": {
+      "id": "http:\/\/wso2jsonschema.org\/Message",
+      "type": "string"
+    },
+    "Result": {
+      "id": "http:\/\/wso2jsonschema.org\/Result",
+      "type": "array",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/0",
+          "type": "object",
+          "properties": {
+            "TimesheetDate": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimesheetDate",
+              "type": "string"
+            },
+            "TimeIn1": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimeIn1",
+              "type": "string"
+            },
+            "TimeOut1": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimeOut1",
+              "type": "string"
+            },
+            "TimeIn2": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimeIn2",
+              "type": "null"
+            },
+            "TimeOut2": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimeOut2",
+              "type": "null"
+            },
+            "TimeIn3": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimeIn3",
+              "type": "null"
+            },
+            "TimeIn4": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimeIn4",
+              "type": "null"
+            },
+            "TimeIn5": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimeIn5",
+              "type": "null"
+            },
+            "TimeOut3": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimeOut3",
+              "type": "null"
+            },
+            "TimeOut4": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimeOut4",
+              "type": "null"
+            },
+            "TimeOut5": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimeOut5",
+              "type": "null"
+            },
+            "TotalTimeWorkedTodayInMins": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TotalTimeWorkedTodayInMins",
+              "type": "string"
+            },
+            "TotalTimeWorkedThisWeekInMins": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TotalTimeWorkedThisWeekInMins",
+              "type": "string"
+            },
+            "TotalTimeWorkedThisMonthInMins": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TotalTimeWorkedThisMonthInMins",
+              "type": "string"
+            },
+            "IPAddressTimeIn1": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/IPAddressTimeIn1",
+              "type": "string"
+            },
+            "IPAddressTimeIn2": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/IPAddressTimeIn2",
+              "type": "null"
+            },
+            "IPAddressTimeIn3": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/IPAddressTimeIn3",
+              "type": "null"
+            },
+            "IPAddressTimeIn4": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/IPAddressTimeIn4",
+              "type": "null"
+            },
+            "IPAddressTimeIn5": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/IPAddressTimeIn5",
+              "type": "null"
+            },
+            "IPAddressTimeOut1": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/IPAddressTimeOut1",
+              "type": "string"
+            },
+            "IPAddressTimeOut2": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/IPAddressTimeOut2",
+              "type": "null"
+            },
+            "IPAddressTimeOut3": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/IPAddressTimeOut3",
+              "type": "null"
+            },
+            "IPAddressTimeOut4": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/IPAddressTimeOut4",
+              "type": "null"
+            },
+            "IPAddressTimeOut5": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/IPAddressTimeOut5",
+              "type": "null"
+            },
+            "TimesheetState": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/TimesheetState",
+              "type": "string"
+            },
+            "Comments": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/Comments",
+              "type": "string"
+            },
+            "ChangedDate": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/ChangedDate",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object"
+}
