@@ -1,0 +1,42 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "isError": {
+      "id": "http:\/\/wso2jsonschema.org\/isError",
+      "type": "boolean"
+    },
+    "Status": {
+      "id": "http:\/\/wso2jsonschema.org\/Status",
+      "type": "number"
+    },
+    "Message": {
+      "id": "http:\/\/wso2jsonschema.org\/Message",
+      "type": "string"
+    },
+    "Result": {
+      "id": "http:\/\/wso2jsonschema.org\/Result",
+      "type": "object",
+      "properties": {
+        "StartDate": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/StartDate",
+          "type": "string"
+        },
+        "EndDate": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/EndDate",
+          "type": "string"
+        },
+        "MeasuredIn": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/MeasuredIn",
+          "type": "string"
+        },
+        "Entitlement": {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/Entitlement",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,84 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "isError": {
+      "id": "http:\/\/wso2jsonschema.org\/isError",
+      "type": "boolean"
+    },
+    "Status": {
+      "id": "http:\/\/wso2jsonschema.org\/Status",
+      "type": "number"
+    },
+    "Message": {
+      "id": "http:\/\/wso2jsonschema.org\/Message",
+      "type": "string"
+    },
+    "Result": {
+      "id": "http:\/\/wso2jsonschema.org\/Result",
+      "type": "array",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/Result\/0",
+          "type": "object",
+          "properties": {
+            "StartDate": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/StartDate",
+              "type": "string"
+            },
+            "EndDate": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/EndDate",
+              "type": "string"
+            },
+            "DurationType": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/DurationType",
+              "type": "number"
+            },
+            "DurationInDays": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/DurationInDays",
+              "type": "number"
+            },
+            "DurationInMinutes": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/DurationInMinutes",
+              "type": "number"
+            },
+            "DurationInDaysThisPeriod": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/DurationInDaysThisPeriod",
+              "type": "number"
+            },
+            "DurationInMinutesThisPeriod": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/DurationInMinutesThisPeriod",
+              "type": "number"
+            },
+            "PartOfDay": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/PartOfDay",
+              "type": "null"
+            },
+            "RequesterComments": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/RequesterComments",
+              "type": "null"
+            },
+            "ApproverComments": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/ApproverComments",
+              "type": "string"
+            },
+            "Approver": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/Approver",
+              "type": "string"
+            },
+            "Status": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/Status",
+              "type": "string"
+            },
+            "LastActionDateTime": {
+              "id": "http:\/\/wso2jsonschema.org\/Result\/0\/LastActionDateTime",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object"
+}
