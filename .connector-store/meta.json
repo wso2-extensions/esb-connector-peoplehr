@@ -4,7 +4,7 @@
     "category": "Human Resource Management",
     "documentationUrl": "https://docs.wso2.com/display/ESBCONNECTORS/PeopleHR+Connector",
     "description": "The PeopleHR connector allows you to access the PeopleHR REST API through the WSO2 ESB. PeopleHR is a cloud based HR solution that could be used to manage employees of an organization in an effective manner. PeopleHR can easily be configured to meet the requirements of any business, be it a multi-national conglomerate or a budding start-up. It is complete HR software with features such as people management, payroll with income tax declaration, leave management, time and attendance management, recruitment management, time-sheet management, etc.",
-    "status": "Active",
+    "status": "Inactive",
     "labels": [
         "connector"
     ],
